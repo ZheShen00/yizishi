@@ -61,7 +61,7 @@
 
 | 厂商 / 规范 | 风格要点（能落到句子上的） | 出处 |
 |---|---|---|
-| Duolingo（反面参照） | 吉祥物 Duo 的唤回提醒（原文标题引用的"We haven't seen you in a while"，配"sad owl images"和"guilt-inducing messages"）被这篇报道称为 passive-aggressive 的唤回策略；"You made Duo sad" 是网上流传更广的同类文案，但未能在这篇报道里逐字核实出处（未核实）。成人语言学习产品拿来做营销可以，K12 和面向未成年人的产品不能照搬：把学习和角色情绪绑定就是这份文件第 8 节禁止的愧疚式唤回 | 媒体报道：<https://www.universityxp.com/news/2025/7/25/we-havent-seen-you-in-a-while-duolingos-passive-aggressive-strategy-for-keeping-users-hooked> |
+| Duolingo（反面参照） | 吉祥物 Duo 的唤回提醒（原文标题引用的"We haven't seen you in a while"，配"sad owl images"和"guilt-inducing messages"）被这篇报道称为 passive-aggressive 的唤回策略；"You made Duo sad 😢" 是 Duolingo 真实发过的唤回邮件标题（邮件链接参数 email_type=resurrection，Really Good Emails 2023-10 存档），正文结尾是 "There’s still time to catch up! Take a 5 minute lesson now."——是邮件标题，不是推送通知。成人语言学习产品拿来做营销可以，K12 和面向未成年人的产品不能照搬：把学习和角色情绪绑定就是这份文件第 8 节禁止的愧疚式唤回 | 媒体报道：<https://www.universityxp.com/news/2025/7/25/we-havent-seen-you-in-a-while-duolingos-passive-aggressive-strategy-for-keeping-users-hooked>；邮件存档：<https://reallygoodemails.com/emails/you-made-duo-sad> |
 | Khan Academy | 以掌握度（mastery）而非单次分数或排名衡量进度；公开倡导成长型思维（growth mindset），夸努力和方法，不夸「你真聪明」 | <https://blog.khanacademy.org/>（具体文案表述未逐篇核实） |
 | Google Classroom | 作业状态用固定的封闭状态集（已布置 / 已交 / 缺交 / 迟交 / 已退回），到期时间精确到具体日期和时间，不用模糊说法 | <https://support.google.com/edu/classroom> |
 | Canvas（Instructure） | 迟交（Late）和缺交（Missing）是两个不同状态，互不替代；SpeedGrader 批改界面的操作文案只给批改动作本身，不描述系统实现 | <https://www.instructure.com/canvas> |
@@ -185,6 +185,8 @@
 - 《中华人民共和国个人信息保护法》第 28 条把「不满十四周岁未成年人的个人信息」列为敏感个人信息，第 31 条要求处理不满十四周岁未成年人个人信息必须取得父母或其他监护人同意，并制定专门的未成年人个人信息处理规则。落到文案：面向可能涉及不满 14 周岁用户的注册、授权、隐私同意页面，必须有监护人同意的步骤和明确告知，不能只给学生本人一个「同意」按钮。来源：<https://www.gov.cn/xinwen/2021-08/20/content_5632486.htm>
 - 《未成年人网络保护条例》（国务院令第 766 号，2024 年 1 月 1 日起施行）第四十三条要求网络产品和服务提供者设置「未成年人模式」，在使用时段、时长、功能和内容等方面按规定提供服务，并为监护人提供时间管理、权限管理、消费管理功能；第四十四条要求合理限制不同年龄阶段未成年人的单次和单日累计消费数额。「未成年人模式」是条例确立的统一制度名称，教育类 App 的青少年保护功能文案应对齐这个名称，不要自造「少儿模式」「儿童模式」等近义词。来源：<https://www.gov.cn/zhengce/content/202310/content_6911288.htm>
 - 三份规定叠加的结果：产品里只要有「未成年人模式」开关，文案要说清楚限制的是什么（时长、功能、消费）、怎么解除（通常需要监护人操作），不能只写「已开启未成年人模式」一句话。
+- 国家网信办《移动互联网未成年人模式建设指南》（2024-11-15 发布，正式版）给了终端层的默认值：不满 16 周岁"默认推荐使用总时长不超过1小时"、16 至 18 周岁不超过 2 小时，连续使用超过 30 分钟发出休息提醒，"每日22时至次日6时期间默认不向未成年人提供服务"，都允许家长豁免；"退出未成年人模式，需要家长进行验证同意"。教育类产品要注意豁免条款：「在有关主管部门备案的，为未成年人提供网课等教育服务的产品和服务」不受上述时长和时段限制。落到文案：自己加的时段限制（如第 7 节例子里的 21:00）要写明是产品或家长设置的，不要写成法定时段；退出入口的说明写清「需要家长验证」。来源：<https://www.cac.gov.cn/2024-11/15/c_1733364304749288.htm>
+- 教育部基础教育教学指导委员会《中小学生成式人工智能使用指南（2025年版）》（2025-05 发布）："小学阶段禁止学生独自使用开放式内容生成功能，教师可在课内适当使用辅助教学"；教师"禁止直接使用AI回答学生问题或提供咨询；应避免直接使用AI生成内容评价学生"；学生"应避免在作业中简单复制生成式人工智能工具生成的内容"。落到文案：面向小学生的 AI 对话 / 生成入口要写清需要老师或家长在场，不能写成学生自己随便问；AI 批改、AI 评语要标明是 AI 生成、由老师确认。指南由教指委发布，教育部官网只有新闻稿，全文见《人民教育》首发、北京日报转载：<https://xinwen.bjd.com.cn/content/s68217324e4b0ec1c3d96f32d.html>；发布新闻：<https://www.gov.cn/lianbo/bumen/202505/content_7023810.htm>
 
 ### 备案与资质
 
@@ -199,7 +201,7 @@
 ### 国际：COPPA / FERPA / UK AADC / WCAG
 
 - 美国 COPPA（儿童在线隐私保护规则，16 CFR Part 312）要求收集不满 13 岁儿童的个人信息前，必须先向家长发送直接通知（16 CFR § 312.4）并取得可验证的家长同意（16 CFR § 312.5）。落到文案：面向美区、13 岁以下用户的注册流程，必须有单独给家长看的通知页，不能让孩子本人点一个同意按钮就跳过。来源：<https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa>
-- 美国 FERPA（家庭教育权利和隐私法，20 U.S.C. § 1232g；34 CFR Part 99）规定学生满 18 岁或进入高等教育阶段后，查看和控制自己成绩记录的权利从家长转移给学生本人（「eligible student」，34 CFR § 99.5(a)）。落到文案：面向美区高等教育场景的产品，家长端如果还保留查看成绩的入口，要先判断学生是否已经是「eligible student」，不能默认家长一直能看到成绩。来源：<https://studentprivacy.ed.gov/>
+- 美国 FERPA（家庭教育权利和隐私法，20 U.S.C. § 1232g；34 CFR Part 99）规定学生满 18 岁或进入高等教育阶段后，查看和控制自己成绩记录的权利从家长转移给学生本人（「eligible student」）。原文 34 CFR § 99.3："Eligible student means a student who has reached 18 years of age or is attending an institution of postsecondary education."；§ 99.5(a)(1)："When a student becomes an eligible student, the rights accorded to, and consent required of, parents under this part transfer from the parents to the student."；§ 99.5(a)(2) 留了例外，如学生是家长报税时的受抚养人（§ 99.31(a)(8)），学校可以不经学生同意向家长披露。落到文案：面向美区高等教育场景的产品，家长端如果还保留查看成绩的入口，要先判断学生是否已经是「eligible student」，不能默认家长一直能看到成绩；同意 / 授权弹窗要发给学生本人，不是家长。来源：<https://www.ecfr.gov/current/title-34/subtitle-A/part-99>（eCFR 现行文本，2026-10 核对）；<https://studentprivacy.ed.gov/>
 - 英国 ICO《适龄设计准则》（Age Appropriate Design Code / Children's code）共 15 条标准，其中标准 4「透明度」（Transparency）要求隐私说明用孩子能看懂的语言重新写一遍，不能只放一份面向成年人的隐私政策；标准 5「数据有害利用」（Detrimental use of data）和标准 13「推动式设计」（Nudge techniques）明确反对用诱导式设计让孩子交出更多数据或关闭隐私保护。落到文案：面向英区未成年用户的隐私说明要有专门的「写给孩子看」的版本，不能和成人版共用一份。来源：<https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/>
 - WCAG 2.1 成功标准 3.1.5（Reading Level，AAA 级）要求正文在去掉专有名词后，阅读难度不超过初中（lower secondary education）水平，超过的要提供简化版本或补充说明。原文：「When text requires reading ability more advanced than the lower secondary education level after removal of proper names and titles, supplemental content, or a version that does not require reading ability more advanced than the lower secondary education level, is available.」 落到文案：面向 K12 学生的正文说明按这个标准控制句子长度和用词难度。来源：<https://www.w3.org/WAI/WCAG21/Understanding/reading-level.html>
 

@@ -52,13 +52,13 @@
 | Google Play 开发者政策（获利与广告） | 「apps offering mechanisms to receive randomized virtual items from a purchase (i.e. 'loot boxes') must clearly disclose the odds of receiving those items in advance of purchase.」——要求与 Apple 基本对齐，2019 年 5 月 30 日生效 | <https://support.google.com/googleplay/android-developer/answer/9888379> |
 | PEGI「Paid Random Items」标识 | 官方定义：「Paid random items are a particular form of optional in-game purchases: they comprise all in-game offers to purchase digital goods or premiums where players don't know exactly what they are getting prior to the purchase (e.g. loot boxes, card packs, prize wheels).」自 2020 年起，含付费随机道具的游戏要在包装和数字商店标注这一提示，2026 年 6 月起新送审的含付费随机道具游戏至少评为 PEGI 16（社交赌场类 PEGI 18） | <https://pegi.info/news/pegi-introduces-feature-notice> |
 | ESRB「In-Game Purchases (Includes Random Items)」标签 | 官方定义：「Contains in-game offers to purchase digital goods or premiums with real world currency (or with virtual coins or other forms of in-game currency that can be purchased with real world currency) for which the player doesn't know prior to purchase the specific digital goods or premiums they will be receiving (e.g., loot boxes, item packs, mystery awards).」2020 年新增，ESRB 博客说明没有直接用「loot box」这个词，是因为这个词不足以覆盖所有随机内购机制，且调查显示只有不到三分之一的家长听过这个词又理解它的含义（此句为博客内容转述，非英文原文逐字） | <https://www.esrb.org/blog/in-game-purchases-includes-random-items/> |
-| PlayStation 开发者认证要求（TRC，二手资料整理） | 奖杯名称 / 描述有字节数上限（非字符数），CJK 文字按每字 3 字节计算，中文 / 日文奖杯名的有效字数远少于英文；错误提示、商店文案要按目标区域语言分别本地化、分别过审 | <https://sandvox.io/game-localization/playstation-localization/>（二手整理，未核实官方 TRC 原文，具体数值以 PlayStation Partners 开发者门户最新版本为准） |
+| PlayStation 开发者认证要求（TRC，二手资料整理） | 奖杯名称 / 描述有字节数上限（非字符数），CJK 文字按每字 3 字节计算，中文 / 日文奖杯名的有效字数远少于英文；错误提示、商店文案要按目标区域语言分别本地化、分别过审 | <https://sandvox.io/game-localization/playstation-localization/>（二手整理，未核实官方 TRC 原文：TRC 只在需登录的 PlayStation Partners 开发者门户内提供，公开渠道查不到，具体数值以门户最新版本为准） |
 | Riot Games UX Design（公开案例分享） | 以 Medium 专栏公开团队案例和设计过程为主，未检索到逐条的游戏文案写作规范文档；可以作为「头部游戏公司设有专职 UX / 内容设计团队」的参照，不作为具体写作规则的引用来源（未核实具体写作规范文本） | <https://medium.com/riot-games-ux-design> |
 | 国家新闻出版署《关于进一步严格管理 切实防止未成年人沉迷网络游戏的通知》（国新出发〔2021〕14 号） | 「仅可在周五、周六、周日和法定节假日每日 20 时至 21 时向未成年人提供 1 小时网络游戏服务」「所有网络游戏必须接入国家新闻出版署网络游戏防沉迷实名验证系统」——界面上的时段提示、实名认证提示必须和这两句对得上，不能自己改写出宽松的版本 | <https://www.gov.cn/zhengce/zhengceku/2021-09/01/content_5634661.htm> |
 | 《未成年人网络保护条例》（国务院令第 766 号，2024 年 1 月 1 日起施行） | 第四十三条要求网络游戏设置「未成年人模式」，以醒目便捷方式提供时间管理、权限管理、消费管理；第四十六条要求网络游戏服务提供者「通过统一的未成年人网络游戏电子身份认证系统等必要手段验证未成年人用户真实身份信息」 | <https://xzfg.moj.gov.cn/law/download?LawID=1694&type=pdf>（原文见第 6 节逐条摘录） |
 | 文化部《关于规范网络游戏运营加强事中事后监管工作的通知》（文市发〔2016〕32 号，2017 年 5 月 1 日起施行） | 「网络游戏运营企业应当及时在该游戏的官方网站或者随机抽取页面公示可能抽取或者合成的所有虚拟道具和增值服务的名称、性能、内容、数量及抽取或者合成概率」——这是国内「概率公示」这四个字的制度源头 | <https://www.mct.gov.cn/whzx/ggtz/201612/t20161205_695627.htm> |
 | 跨平台概率披露现状（多方媒体综述，非单一原文） | 据多篇行业报道综述，App Store、Google Play、Xbox、PlayStation、Nintendo eShop 目前都把「随机道具概率披露」列为游戏上架 / 过审的条件之一，不是某一家平台的孤立要求——写抽卡概率公示文案时要按最严格的那一家（通常是 Apple / Google 的「购买前披露」）来设计，不要只满足某一个平台的最低要求 | <https://blog.promise.legal/loot-box-laws-game-developers/>、<https://kotaku.com/google-now-requires-app-makers-to-disclose-loot-box-odd-1835134642>（综述性二手资料，未逐一核实各平台原文最新版本） |
-| Xbox Live 行为准则 / 社区标准（Microsoft） | 对匹配、语音聊天、举报功能的界面提示要体现「可以屏蔽、可以举报、处理有结果」这个闭环，这是主机平台对社交类文案的通用要求方向；本篇未逐条核实准则原文具体条款，仅作为「社交功能需要举报闭环」的方向性参照（未核实具体条款原文） | <https://www.xbox.com/en-US/legal/community-standards> |
+| Xbox 社区标准（XBOX Community Standards，Microsoft） | 「Reporting」一节原文：「If you experience or witness inappropriate content and/or behavior, we encourage you to block and mute the content and also to report the player(s) acting inappropriately and/or the piece of content itself. If you report something, XBOX will conduct a review and may issue an enforcement only on the reported item」，并给出处罚记录（Enforcement history）和申诉（case review）入口——「屏蔽 / 静音 → 举报 → 审核 → 处罚 → 可申诉」是一条完整链路。注意这是面向玩家的行为准则，不是对开发者界面文案的认证要求，这里只借它的链路设计做社交 / 举报文案的参照 | <https://www.xbox.com/en-US/legal/community-standards> |
 | Steam 官方退款政策（Valve） | 「within two weeks of purchase and with less than two hours of playtime」——购买 14 天内且游玩时长少于 2 小时可自助退款；预购游戏「the two-hour playtime limit for refunds will apply...but the 14-day period for refunds will not start until the release date」，14 天的起算点是发售日而不是购买日。退款确认文案要能说清这两个条件是否满足，不能只说「不符合退款条件」 | <https://store.steampowered.com/steam_refunds/> |
 
 ## 4. 术语和叫法
@@ -143,8 +143,8 @@
 - 第四十七条：「网络游戏服务提供者应当落实适龄提示要求，根据不同年龄阶段未成年人身心发展特点和认知能力，通过评估游戏产品的类型、内容与功能等要素，对游戏产品进行分类，明确游戏产品适合的未成年人用户年龄阶段，并在用户下载、注册、登录界面等位置予以显著提示。」——适龄提示要出现在下载、注册、登录三个界面，不是出现一次就算完成。
 - 国家新闻出版署〔2021〕14 号通知：「仅可在周五、周六、周日和法定节假日每日 20 时至 21 时向未成年人提供 1 小时网络游戏服务，其他时间均不得以任何形式向未成年人提供网络游戏服务」——未成年人模式下的时段提示必须和这句话完全对得上，不能自己放宽。
 - 文化部文市发〔2016〕32 号通知：「网络游戏运营企业应当及时在该游戏的官方网站或者随机抽取页面公示可能抽取或者合成的所有虚拟道具和增值服务的名称、性能、内容、数量及抽取或者合成概率。公示的随机抽取相关信息应当真实有效。」——抽卡页面必须有概率公示入口，公示的数字必须是真实在用的概率，不能对外一套、后台一套。
-- 《网络游戏管理办法（草案征求意见稿）》（国家新闻出版署 2023 年 12 月 22 日公开征求意见，尚未正式生效，具体条号未核实，以下为媒体报道转述）：要求网络游戏在开始前的显著位置全文登载《健康游戏忠告》；要求所有网络游戏设置用户充值限额并在服务规则中公示，对非理性消费行为要有弹窗警示。来源：<https://cn.chinadaily.com.cn/a/202312/22/WS65854391a310c2083e41433c.html>
-- 《健康游戏忠告》是国内网络游戏行业沿用多年的固定登录页提示语，具体逐字文本本次未核实到官方最新版本，上线前请核对国家新闻出版署或所在平台的最新文案，不要凭记忆默写。
+- 《网络游戏管理办法（草案征求意见稿）》：**这是草案，未生效，不能当现行依据引用**。已核实的只有它的存在和状态——国家新闻出版署 2023 年 12 月 22 日发布《关于公开征求〈网络游戏管理办法（草案征求意见稿）〉意见的通知》，意见反馈截止 2024 年 1 月 22 日（通知原页面现已从署网站撤下，2024-01-17 存档：<https://web.archive.org/web/20240117012009/https://www.nppa.gov.cn/xxfb/tzgs/202312/t20231221_823187.html>）；12 月 23 日署有关负责人表示「对于各方就征求意见稿第十七条、第十八条及其他一些内容提出的关切和意见，国家新闻出版署将认真研究」（<https://www.nppa.gov.cn/xxfb/ywxx/202312/t20231223_823532.html>）。本次没有查到正式发布的版本。草案条文本身未核实（附件 docx 已撤下、存档抓不到），以下为媒体报道转述：要求网络游戏在开始前的显著位置全文登载《健康游戏忠告》；要求所有网络游戏设置用户充值限额并在服务规则中公示，对非理性消费行为要有弹窗警示。来源：<https://cn.chinadaily.com.cn/a/202312/22/WS65854391a310c2083e41433c.html>
+- 《健康游戏忠告》是国内网络游戏行业沿用多年的固定登录页提示语，具体逐字文本本次未核实到官方最新版本（国家新闻出版署「出版国产网络游戏作品审批」办事指南只要求演示视频「需展示健康游戏忠告」，没有给出全文；中国政府网转载的《网络游戏防沉迷系统开发标准》只出现其中一句「适度游戏益脑，沉迷游戏伤身」），上线前请核对国家新闻出版署或所在平台的最新文案，不要凭记忆默写。
 - Apple App Store Review Guidelines 3.1.1：含随机付费道具的 App 必须在购买前披露每种道具的获取概率（原文见第 3 节）；Google Play 开发者政策同样要求购买前披露概率（原文见第 3 节）——这两条是国际发行绕不过的硬性上架条件，不是「有就加分」的可选项。
 - ESRB / PEGI 标签：含随机付费道具的游戏要在商店页面标注「In-Game Purchases (Includes Random Items)」（ESRB）或「Includes Paid Random Items」（PEGI）这类官方标签，标签文字和展示位置按平台要求的规格来，不能自己简化。
 - Apple App Store Review Guidelines 4.9（Apple Pay 订阅类）：「Apps using Apple Pay to offer recurring payments must, at a minimum, disclose the following information: The length of the renewal term and the fact that it will continue until canceled; What will be provided during each period; The actual charges that will be billed to the customer; How to cancel.」——战令、月卡这类自动续费内购，订阅周期、续费事实、实际扣费金额、取消方式这四项缺一不可，这是第 8、9 节「续费包装成免费」那条坏写法对应的硬性依据。
@@ -152,7 +152,7 @@
 **不许出现的话**：
 
 - 不得用「幸运」「欧皇」「必出」这类渲染随机性结果的词包装抽卡——概率是真实数字，不是运气话术能改变的。
-- 《网络游戏管理办法（草案征求意见稿）》转述（未生效，具体条号未核实）：「不得设置每日登录、首次充值、连续充值等诱导性奖励」「不得在网络游戏中设置强制对战」——这两条如果正式生效，现有的「连续登录奖励递增」「强制 PVP」设计都需要重新评估文案和机制。
+- 《网络游戏管理办法（草案征求意见稿）》媒体转述（草案未生效，条文和条号未核实；署方回应只确认第十七、十八条引发关切，没有给出条文内容）：「不得设置每日登录、首次充值、连续充值等诱导性奖励」「不得在网络游戏中设置强制对战」——这两条如果正式生效，现有的「连续登录奖励递增」「强制 PVP」设计都需要重新评估文案和机制。
 - 《未成年人网络保护条例》第四十二条：「网络产品和服务提供者应当建立健全防沉迷制度，不得向未成年人提供诱导其沉迷的产品和服务」——未成年人模式下不能出现「再抽一次就能出金卡了」这类催促继续消费的话术。
 - 第二十四条第三款：「网络产品和服务提供者不得通过自动化决策方式向未成年人进行商业营销。」——未成年人账号不应该收到千人千面的付费推荐。
 
@@ -269,13 +269,13 @@ EN: "This season ends at 00:00 on Oct 20. Rank may be temporarily unavailable du
 
 ### 台湾
 
-- 游戏软体分级沿用台湾自己的分级类别：普遍级、保護级、輔 12 级、輔 15 级、限制级（此为游戏行业通行说法，本次未核实官方最新条文原文，上线前请核对文化部影视及流行音乐产业局最新公告）。
-- 含随机抽取机制（機率型商品，对应大陆的「抽卡」「开箱」）的游戏，台湾社会与立法院近年持续要求公开抽取机率、标示投入金额提示；本次调研未能核实到可直接引用的法规条号原文，只能确认方向——机率公示、避免误导性宣传用语是业界公认的合规方向，具体条文、生效时间请上线前向文化部或委任的法律顾问核实，不要直接套用大陆文化部〔2016〕32 号通知的条文表述。
+- 游戏软体分级依《遊戲軟體分級管理辦法》（最新修正 2019 年 5 月 23 日，主管机关现为數位發展部）第 4 條，原文：「遊戲軟體依其內容分為下列五級：一、限制級（以下簡稱限級）：十八歲以上之人始得使用。二、輔導十五歲級（以下簡稱輔十五級）：十五歲以上之人始得使用。三、輔導十二歲級（以下簡稱輔十二級）：十二歲以上之人始得使用。四、保護級（以下簡稱護級）：六歲以上之人始得使用。五、普遍級（以下簡稱普級）：任何年齡皆得使用。」第 13 條要求在包装及说明、下载或起始网页「以中文明顯標示」警语，其中第三款：以购买点数、虚拟游戏币或虚拟宝物作付费方式的，「應標示其付費內容及金額、遊戲部分內容或服務需另行支付其他費用，或其他類似警語」。来源：<https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0030086>
+- 機率型商品（对应大陆的「抽卡」「开箱」）的揭露义务在《網路連線遊戲服務定型化契約應記載及不得記載事項》（2023 年 1 月 1 日生效版）第六點第（四）款：企业经营者应于官网首页、游戏登入页面或购买页面及游戏套件包装上载明「有提供直接或間接、部分或全部付費購買之機會中獎商品或活動，其活動內容、獎項、中獎機率百分比及中獎等資訊，並應記載『此為機會中獎商品，消費者購買或參與活動不代表即可獲得特定商品』等提示」；同點第二項：「前項第四款所稱機率，指消費者付費後取得機會中獎商品或完成活動設定條件之機率。」台湾界面的機率说明要用这句法定提示，不要直接套用大陆文化部〔2016〕32 号通知的条文表述。来源（行政院公布的 PDF）：<https://www.ey.gov.tw/File/C27658C15073FF69?A=C>
 - 個資蒐集按《個人資料保護法》第 8 条告知六项（机关名称、蒐集目的、个资类别、利用期间 / 地区 / 对象 / 方式、当事人权利、不提供的影响），不是大陆的《个人信息保护法》。
 
 ### 香港
 
-- 本次调研未找到香港专门针对游戏機率型商品 / loot box 的立法，按 `locale-zh-hant.md` 换词即可；一般消费者保护、广告不实的规定仍适用于游戏内购的宣传文案，其中《商品說明條例》（香港法例第 362 章）规管「虛假商品说明」和「不良销售手法」，游戏内购的促销描述如果和实际内容 / 概率不符，原则上会落入这部条例的规管范围（本节仅确认条例名称和大致适用方向，具体条号、游戏行业适用案例未核实，上线前请核对香港海关 / 消委会最新指引）。
+- 本次调研未找到香港专门针对游戏機率型商品 / loot box 的立法，按 `locale-zh-hant.md` 换词即可；一般消费者保护、广告不实的规定仍适用于游戏内购的宣传文案，其中《商品說明條例》（香港法例第 362 章）的「公平營商條文」自 2013 年 7 月 19 日起生效，香港海关《遵從與執法政策聲明》列出的条号原文为：「第 7 條：與貨品的商品說明有關的罪行」「第 7A 條：與服務的商品說明有關的罪行」「第 13E 條：誤導性遺漏」「第 13F 條：具威嚇性的營業行為」「第 13G 條：餌誘式廣告宣傳」「第 13H 條：先誘後轉銷售行為」「第 13I 條：不當地接受付款」（<https://www.customs.gov.hk/hcms/filemanager/common/pdf/pdf_forms/Enforcement_Guidelines2_tc.pdf>）。同一份声明第 3.2 段：营业行为「(a) 遺漏或隱藏重要資料； (b) 以不明確、難以理解、含糊或不適時的方式提供重要資料；或(c) 未能表露其商業用意」，因而导致或相当可能导致一般消费者作出原本不会作出的交易决定，即属误导性遗漏（条例英文原文见 2012 年第 25 號條例第 13E 條：<https://www.legco.gov.hk/yr11-12/english/ord/ord025-12-e.pdf>）——内购页不写或藏起概率、限制条件，最可能落在这一条；13F 管的是骚扰、威迫这类具威吓性的手法，和概率披露关系不大。条号已核实；条例对游戏内购的具体适用、行业案例未核实，上线前请核对香港海关 / 消委会最新指引。
 - 個資蒐集按《個人資料（私隱）條例》（第 486 章）附表 1 第 1 原則，收集时告知收集目的和资料转移对象，不是大陆的《个人信息保护法》。
 - 游戏圈常见港式用词和台湾、大陆都不同：「課金」（付费，源自日语外来语，台湾、香港玩家社群都常用，大陆主流界面不用这个词）、「練功」（练级）、「過數」（转账，付费场景常见口语）。界面文案如果要贴近当地玩家习惯，可以在营销向文案里借用「課金」，但正式的购买确认框、收据这类严肃场景仍用「購買」「付款」，不用网络用语。
 

@@ -101,5 +101,5 @@
 
 - Microsoft 术语（Microsoft Terminology / Language Portal 的继任数据集）：<https://learn.microsoft.com/en-us/globalization/reference/microsoft-terminology>
 - OpenCC 简繁转换（`s2twp`、`s2hk` 配置）：<https://github.com/BYVoid/OpenCC>
-- 教育部《重訂標點符號手冊》（台湾教育部语文成果网站，链接未核实）
+- 教育部《重訂標點符號手冊》修訂版（教育部國語推行委員會，民國 97 年 12 月）：<https://language.moe.gov.tw/001/Upload/files/SITE_CONTENT/M0001/HAU/c2.htm>（手册页面自己写的 `.../c2.html` 网址会 404，用 `.htm` 这个）
 - speak-human-tw 的台湾在地化用语表（MIT）：<https://github.com/Raymondhou0917/speak-human-tw>
