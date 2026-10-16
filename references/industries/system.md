@@ -44,12 +44,12 @@
 |---|---|---|
 | Apple Human Interface Guidelines – Writing（含 Alerts） | 警告标题清楚简短地描述情况；标题是完整句子就用句子大小写加句尾标点，是短语就用标题大小写、不加句尾标点；正文只在有用时才加，越短越好，尽量别让警告框需要滚动；语气直接、中性，不含糊、不指责、不掩盖严重程度；按钮用一两个词、和正文直接相关的动词（"Erase"、"Delete"），只有纯告知类警告才用 "OK"；少用 my/your，不用 "we" | <https://developer.apple.com/design/human-interface-guidelines/alerts>、<https://developer.apple.com/design/human-interface-guidelines/writing> |
 | Apple Style Guide | 覆盖苹果产品文案里缩写、大小写、标点、度量单位的统一写法，按年更新 | <https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf> |
-| Microsoft Windows apps – Writing style | concise 不等于「字少」，而是「efficient」——刚好够用；按钮文字最多两三个短词；报错标题描述问题本身，不描述解决动作；按钮/复选框/单选项文字不加句尾句号，工具提示和报错正文要加句号 | <https://learn.microsoft.com/en-us/windows/apps/design/style/writing-style> |
-| Microsoft Windows UX Guide – Error Messages | 报错写法「温暖放松、随时搭把手、干脆清楚」三原则；结构上先说问题，再给用户能执行的现实解决办法；modal 对话框只用在必须让用户立刻处理、无法忽略的场景 | <https://learn.microsoft.com/en-us/windows/win32/uxguide/mess-error> |
+| Microsoft Windows apps – Writing style | 三条语气原则贯穿所有文案（含报错）：「温暖放松（be warm and relaxed）」「随时搭把手（be ready to lend a hand）」「干脆清楚（be crisp and clear）」；按钮文字最多一两个短词，用主动语态；不浪费字数，但不为省字而牺牲该有的信息；按钮/复选框/单选项/标签不加句尾句号，工具提示、报错、对话框正文是完整句子时要加句号 | <https://learn.microsoft.com/en-us/windows/apps/design/style/writing-style> |
+| Microsoft Windows UX Guide – Error Messages | 好报错 = 问题（problem）+ 原因（cause）+ 解决办法（solution）三段式，且要具体、用户能执行、简短、不指责、不常出现；标题只负责指出问题来自哪个命令/功能，不负责解释问题本身（解释是正文「主说明」的事）；大多数报错用 modal 对话框，但只在必须让用户立刻确认、无法忽略时才用，其余场景优先用行内提示、气泡或通知等更轻量的呈现方式 | <https://learn.microsoft.com/en-us/windows/win32/uxguide/mess-error> |
 | Microsoft Windows UX Guide – User Account Control | UAC 术语口径：首次出现写全称 User Account Control，之后简写 UAC；不要用省略号暗示「这个命令需要提权」，提权要靠盾牌图标表达，不是靠标点 | <https://learn.microsoft.com/en-us/windows/win32/uxguide/winenv-uac> |
 | GNOME Human Interface Guidelines – Writing Style | 文本尽量短，但不能短到丢意思或变得含糊；用中性视角，少用「你/我的」，确有归属关系时用「你的」而不是「我的」；标题大小写（4 字母以上首字母大写）和句子大小写分场合使用，复选框/单选项/正文一律句子大小写 | <https://developer.gnome.org/hig/guidelines/writing-style.html> |
 | KDE Human Interface Guidelines – Text and Labels | 按钮、菜单项用祈使语气（「Apply」而不是「Yes」）；正向措辞描述「开启后会怎样」，不描述关闭；优先用「folder」而不是「directory」，删除文件的操作统一叫「Delete」；尽量不用缩写词，非用不可时第一次出现要展开解释 | <https://develop.kde.org/hig/text_and_labels/> |
-| Mozilla Acorn（Firefox 设计系统）– Content Guidelines | 桌面端、Android 端、网站默认用句子大小写（sentence case），更利于快速扫读、语气更亲和；技术缩写能不用就不用，必须用时给一句话解释，避免难以本地化的俚语和比喻 | <https://acorn.firefox.com/latest/content-guidelines/capitalization.html> |
+| Mozilla Acorn（Firefox 设计系统）– Content Guidelines | 桌面端、Android 端、网站默认用句子大小写（sentence case），更利于快速扫读、语气更亲和；技术术语能不用就不用，必须用时要给一句简短定义和了解更多的途径；口语化表达/俚语不利于包容性，也难翻译成其他语言文化，应避免 | 大小写规则：<https://acorn.firefox.com/latest/content/capitalization-4nEWdMUM>；术语和包容性写作指引：<https://acorn.firefox.com/latest/content/inclusive-writing/writing-guidance-hSvdb7Dx>（原文件旧链接 content-guidelines/capitalization.html 已失效，改用上述现行链接） |
 | Android Developers – Permissions | 系统权限弹窗本身的文案由系统固定，应用能写的是弹窗之前「为什么需要这个权限」的说明；这段说明要贴着触发它的具体操作出现，不要在启动时一次性要齐所有权限 | <https://developer.android.com/training/permissions/requesting>、<https://developer.android.com/training/permissions/explaining-access> |
 | HarmonyOS Design（华为开发者联盟设计规范） | 官方设计系统覆盖视觉、交互、动效、字体等规范，但没有找到独立公开的中文文案写作规范；写鸿蒙应用的文案时，点按动作叫「点击」还是「轻点」等用词，以鸿蒙系统自带应用的实际文案为准，不要凭印象从别的平台搬 | <https://developer.huawei.com/consumer/cn/design/> |
 | 小米 HyperOS / MIUI 开发者文档 | 《MIUI10通知样式及能力适配说明》：标准通知一般只有「标题、内容、图标、时间戳」四个元素，大文本样式要长按才展开——关键信息要放进标题和第一行内容，不能指望用户展开看；这份是开发适配文档，不是文案风格指南 | <https://dev.mi.com/xiaomihyperos/documentation/detail?pId=1581> |
@@ -309,11 +309,11 @@ Windows / Linux 用加号连接的大写缩写：Ctrl+Shift+S；macOS 用符号�
 
 | 简体 | 台湾 | 香港 |
 |---|---|---|
-| 分辨率 | 解析度 | 解像度 |
+| 分辨率 | 解析度 | 解析度 |
 | U 盘 | 隨身碟 | USB 手指（口语；界面写「USB 儲存裝置」） |
 | 回收站 | 資源回收筒 | 資源回收筒 |
 | 任务管理器 | 工作管理員 | 工作管理員 |
 | 补丁 | 修補程式 | 修補程式 |
 | 端口 | 連接埠 | 連接埠 |
 
-（港栏以 Microsoft zh-HK 术语为准，未逐词核实）
+（抽查核实：Microsoft zh-HK 支持文档「在 Windows 中變更螢幕解析度和版面配置」用的是「解析度」，不是「解像度」，已按此改正——日常港式口语和相机/电视广告里「解像度」也很常见，但 Microsoft 系统文案走「解析度」；「USB 手指」为口语惯用，系统文案走「USB 儲存裝置」。其余各行未逐词核实，如有出入以 Microsoft zh-HK 当前产品文案为准）

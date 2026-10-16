@@ -78,15 +78,14 @@
 | 厂商 / 规范 | 风格要点（能落到句子上的） | 出处 |
 |---|---|---|
 | Siemens Industrial Experience（iX 设计系统） | 消息文案用句子大小写 + 句号（toast 除外）；用具体原因替代模糊说法，如把 "Something happened" 改成 "Failed to upload file due to connection error"；同类消息统一语法形态："No assets added. / No dashboards created."；操作按钮用直接动词（Close、Save、Delete），不用 OK/Confirm；不用「Are you sure…?」这种讨好式反问 | <https://ix.siemens.io/docs/guidelines/language/messaging/messages-overview> |
-| ABB Ability System 800xA 报警管理 | 报警 = 需要操作员确认的异常事件，和普通事件（event）在界面上分开处理；报警列表按时间顺序，报警带（alarm band）常驻可见；按工艺功能结构自动分组报警，不需要为每个位号手工维护报警分组 | <https://library.e.abb.com/public/d644c7d5846848559f0da8b570e9ff84/3BSE067466%20en%20F%20System%20800xA%20Alarm%20Management.pdf> |
-| Schneider Electric EcoStruxure Power Operation | 设备运行状态用固定徽标文字 + 固定颜色绑定：RUN（绿底）、STOP（红底）、HALT ON BP（红底）；状态词和颜色的对应关系不随文案风格调整 | <https://product-help.schneider-electric.com/EcoStruxure/Power-Operation-2024/content/8%20reference/glossary.htm> |
-| Rockwell Automation FactoryTalk Alarms and Events | 报警条件文本（Alarm Condition Text）按触发条件命名，如 "High-High PV"；每条报警配置严重度、确认方式、消息文本，报警文本和触发条件一一对应，不写笼统的「异常」 | <https://literature.rockwellautomation.com/idc/groups/literature/documents/rm/ftae-rm001_-en-e.pdf> |
-| Honeywell 报警管理 / Experion PKS | 以 ISA-18.2 为合规基线；用报警绩效报表（EAPR）衡量报警速率、长期未消报警，界面文案服务于「操作员能不能在允许时间内响应」这个目标，不是单纯提示 | <https://process.honeywell.com/us/en/products/industrial-software/operational-excellence/alarm-management> |
-| Emerson 报警梳理（Alarm Rationalization）白皮书 | 报警数据库最少字段：位号、类型、设定点、优先级、原因、后果、处理措施、响应时限；缺任意一项，这条报警就不算「梳理完成」 | <https://www.emerson.com/documents/automation/white-paper-alarm-rationalization-deltav-en-56654.pdf> |
+| ABB Ability System 800xA 报警管理 | 报警（alarm）和普通事件（event）分开列示，报警需要操作员确认；应用栏里常驻的报警带（Alarm Band）按钮显示当前未确认报警数量，颜色对应当前出现的最高优先级；报警列表的时间戳等列可排序，不是固定按时间顺序；按工艺功能结构自动分组报警，不需要为每个位号手工维护报警分组 | 白皮书：<https://library.e.abb.com/public/d644c7d5846848559f0da8b570e9ff84/3BSE067466%20en%20F%20System%20800xA%20Alarm%20Management.pdf>；Alarm Band 功能说明见《System 800xA Operations》手册：<https://library.e.abb.com/public/9b0e967a68aa48f6bcc2ff88ff64cffb/3BSE036904-510_F_en_System_800xA_Operations_5.1.pdf> |
+| Rockwell Automation FactoryTalk Alarms and Events | 报警历史记录里的 ConditionName 字段按触发条件命名，随报警类型而不同（模拟量报警：LO / LOLO / HI / HIHI；偏差报警：DEV_LO / DEV_HI 等）；每条报警另配置 Severity（严重度）和 Message（最多 512 字符的消息文本，需单独填写，不是条件名自动生成）——报警文本、严重度、确认方式都是配置的一部分，不是可选补充说明 | <https://literature.rockwellautomation.com/idc/groups/literature/documents/rm/ftae-rm001_-en-e.pdf> |
+| Honeywell 报警管理 / Experion PKS | 以 EEMUA 191、ANSI/ISA-18.2 作为报警数量的合规基准（benchmark）；用「平均长期未消报警数」「每操作员每小时报警率」等指标衡量报警负荷，自动生成 KPI 报表，服务于「操作员能不能在允许时间内响应」这个目标，不是单纯提示 | 白皮书《Enhanced Alarm Management》：<https://process.honeywell.com/content/dam/process/en/documents/document-lists/honeywell_enhanced-a.pdf>；产品页：<https://process.honeywell.com/us/en/products/industrial-software/operational-excellence/alarm-management> |
+| Emerson 报警梳理（Alarm Rationalization）白皮书 | 报警数据库最少字段：位号（tag）、类型（type）、设定点（limit/setpoint）、优先级（priority）、原因（cause）、后果（consequence）、处理措施（operator action）、响应时限（response time）；这些是报警梳理（rationalization）阶段要记录的核心属性，不是可选的补充说明 | <https://www.emerson.com/documents/automation/white-paper-alarm-rationalization-deltav-en-56654.pdf> |
 | 中控技术 SUPCON 高级报警管理 AAS | 产品介绍原话「符合ISA18.2的国际规范定义进行高级报警管理」；合理化分析要给每条报警定优先级、明确响应动作和响应时间——写报警文案时，处理建议和时限是报警的一部分，不是可选的补充说明 | <http://www.supcon.com/products/proinfo/153.html>（产品介绍页，不是界面文案规范；该站抓取时不稳定，引语经搜索引擎收录的页面文字核对） |
 | 华为数字能源 FusionSolar | App 介绍原话「运维人员通过APP接收实时告警和处理任务单」，并给出故障电站的处理建议：告警（发生了什么）和任务单（谁去处理、处理到哪）是两类对象，文案上分开写 | <https://solar.huawei.com>（引语出自 FusionSolar App 的应用商店介绍，不是界面文案规范） |
 | 树根互联 根云 ROOTCLOUD | 报警按来源独立分类统计：非法操作报警、设备异常报警、偏离预定位置报警，不合并成一条笼统的「设备异常」 | <https://www.irootech.com/knowledge/case18.html> |
-| 国家电网 网上国网 App | 面向居民/企业用户的缴费、用能分析、故障报修、停电信息查询等 75 项服务；客观状态信息（停电、报修进度）仍用陈述句，不因为是 C 端应用就改成营销腔 | <https://apps.apple.com/us/app/%E7%BD%91%E4%B8%8A%E5%9B%BD%E7%BD%91/id1438998315> |
+| 国家电网 网上国网 App | 面向居民/企业用户的缴费、用能分析、故障报修、停电信息查询等 75 项服务；客观状态信息（停电、报修进度）仍用陈述句，不因为是 C 端应用就改成营销腔 | App Store 介绍页：<https://apps.apple.com/cn/app/%E7%BD%91%E4%B8%8A%E5%9B%BD%E7%BD%91/id1438998315>（未写明服务项数）；「75 项服务」见媒体综述：<https://baike.baidu.com/item/%E7%BD%91%E4%B8%8A%E5%9B%BD%E7%BD%91/24450998> |
 | GB 2894-2025《安全色和安全标志》 | 四种安全色（黄/红/蓝/绿）对应四类标志（警告/禁止/指令/提示），形状和颜色强制绑定，替代旧版 GB 2893-2008、GB 2894-2008、GB 7231-2003；2025-05-30 发布，2026-03-01 实施 | <https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=26CD7C428F2BF6AE971F84D22D7B72BB>（国家标准全文公开系统） |
 | ANSI/ISA-101.01-2015（高性能 HMI 设计） | 静态文字尽量少用缩写，因为缩写难翻译成其他语言，并为翻译预留空间；数值显示带工程单位（如 "42.3 °C"、"55.2 kPa"）；正常工艺颜色克制（灰度为主），鲜艳颜色留给异常状态 | <https://www.isa.org/standards-and-publications/isa-standards/isa-101-standards>（标准原文付费；「Minimize abbreviations as they may be difficult to translate to other languages」一句经网上流传的标准节选核对） |
 | ASD-STE100 Simplified Technical English | 一个概念只用一个受控词，不轮换近义词；指令类句子不超过 20 个英文词，说明类句子不超过 25 个词；不许为了缩短句子而省略主语、动词或冠词，因为那样只会制造歧义 | <https://www.asd-ste100.org/>（官方规范需在官网申请下载；词数门槛经多份规范解读交叉核对，条号随版本变动，引用时以官方当前版本为准） |
@@ -301,8 +300,8 @@
 - 台湾：
   - 危害性化学品标示要以中文为主。警示语按分类用「危險」或「警告」，并附危害图式、危害警告讯息、危害防范措施（《危害性化學品標示及通識規則》第 5 条）。
   - HMI 里显示化学品危害时，用这两个法定警示语，不要另造「高危」「注意危险」。<https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0060054&flno=5>
-- 台湾安全标志：CNS 9328 参照 ISO 3864-1:2011 制定，是安全标志的设计原则（来自第三方标准站点，CNS 官网未核实）。DANGER／WARNING／CAUTION 三级在台湾通行写「危險／警告／注意」，与第 6 节的说明一致。
-- 香港：未见专门针对 HMI 或设备标示用语的法规（未核实）。职业安全一般义务见《職業安全及健康條例》（Cap. 509）。<https://www.elegislation.gov.hk/hk/cap509!zh-Hant-HK>
+- 台湾安全标志：CNS 9328《圖形符號－安全顏色及安全標誌－第1部：安全標誌及安全標示之設計原則》参照 ISO 3864-1:2011 制定，现行版本公告日期 103/12/18（2014 年 12 月 18 日），经经济部标准检验局「国家标准(CNS)网路服务系统」核实。<https://www.cnsonline.com.tw/?node=result&generalno=9328&locale=zh_TW> DANGER／WARNING／CAUTION 三级在台湾通行写「危險／警告／注意」，与第 6 节的说明一致。
+- 香港：没有找到专门规定 HMI 或设备标示具体文字/图形的法规。《工廠及工業經營條例》（Cap. 59）及其附属规例对原动机、传动机械的危险部分有「须有效防护」等要求，职业安全一般义务另见《職業安全及健康條例》（Cap. 509），但两者都没有像大陆 GB 2894 那样强制规定标志的具体文字、颜色、形状绑定。<https://www.labour.gov.hk/tc/legislat/content3.htm>、<https://www.elegislation.gov.hk/hk/cap509!zh-Hant-HK>
 - 第 6 节引用的 GB 2894、GB 3100 等大陆国标，在台港站换成 CNS 或国际标准（ISO 3864、IEC 62682）。
 - 个资：台湾适用《個人資料保護法》（蒐集时依第 8 条告知），香港适用《個人資料（私隱）條例》（Cap. 486），不是大陆《个人信息保护法》。操作留痕记录操作人姓名、工号也算个资。
 

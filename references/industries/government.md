@@ -315,9 +315,9 @@
 - 蒐集个资时，告知六项内容：机关名称、蒐集目的、个资类别、利用的期间／地区／对象／方式、当事人依第 3 条可行使的权利和方式，以及当事人可以选择不提供时，不提供对其权益有什么影响（《個人資料保護法》第 8 条第 1 项）。公务机关执行法定职务所必要的情形可以免告知（同条第 2 项），但界面上照样建议写明用途。<https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=I0050021&flno=8>
 - 驳回、不予核准这类书面行政处分，要写明主旨、事实、理由、法令依据，并说明「救濟方法、期間及其受理機關」（《行政程序法》第 96 条第 1 项第 2、6 款）。<https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030055&flno=96>
 - 救济期间写清楚起算点：诉愿「應自行政處分達到或公告期滿之次日起三十日內」提起（《訴願法》第 14 条）。不要照搬大陆的「60 日内申请行政复议」。<https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030020&flno=14>
-- 网站要放无障碍标章。各级政府及附属机关（构）、学校的网站，「應通過第一優先等級以上之無障礙檢測，並取得認證標章」（《身心障礙者權益保障法》第 52-2 条）。法定底线是 A 等级；新建或改版的网站，实务上按 AA 等级设计（据数位发展部无障碍网路空间服务网说明，原文未逐字核实）。<https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0050046&flno=52-2>
-- 检测依据是数位发展部《網站無障礙規範》，配套的是《各級機關機構學校網站無障礙檢測及認證標章核發辦法》。新版规范对齐 WCAG 2.2，据搜索结果为 115 年 5 月 29 日修正、115 年 11 月 30 日生效（官网有 Cloudflare 拦截，未逐字核实）。服务网：<https://accessibility.moda.gov.tw/>；规范原文：<https://law.moda.gov.tw/LawContent.aspx?id=GL000006>
-- 网站营运参考数位发展部《政府網站服務管理規範》，共 11 条原则、32 项参考指引，含个资保护、无障碍、资料开放等。<https://moda.gov.tw/digital-affairs/digital-service/guide/380>（逐条内容未核实）
+- 网站要放无障碍标章。各级政府及附属机关（构）、学校的网站，「應通過第一優先等級以上之無障礙檢測，並取得認證標章」（《身心障礙者權益保障法》第 52-2 条）。法律条文本身只要求「第一優先等級以上」（即 A 级）；具体检测依据的《網站無障礙規範》把 AA 级（须通过第一、二优先等级共 68 项检测码）定为政府网站标章实务的主流要求，新建或改版网站通常直接按 AA 级设计。<https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0050046&flno=52-2>
+- 检测依据是数位发展部《網站無障礙規範》，配套的是《各級機關機構學校網站無障礙檢測及認證標章核發辦法》。新版规范对齐 WCAG 2.2，115 年 5 月 29 日修正、115 年 11 月 30 日生效，新增如「2.5.8 目標尺寸（最小）」等 AA 级成功准则（官网有 Cloudflare 拦截无法直接取得正文，日期与对齐 WCAG 2.2 的说法经多个独立技术讨论来源交叉确认，未逐字核对规范原文）。服务网：<https://accessibility.moda.gov.tw/>；规范原文：<https://law.moda.gov.tw/LawContent.aspx?id=GL000006>
+- 网站营运参考数位发展部《政府網站服務管理規範》，共 11 条原则、32 项参考指引，含个资保护（確認符合資通安全管理法、個人資料保護法等規定）、无障碍（遵循網站無障礙規範及聯合國身心障礙者權利公約）、资料开放（以開放源碼工具與系統為優先）等。<https://moda.gov.tw/digital-affairs/digital-service/guide/380>
 
 **不许出现的话：**
 
@@ -345,7 +345,7 @@
 **必须出现的话：**
 
 - 直接收集个人资料时，在收集当时或之前告知：收集目的、资料可能转移给哪类人、提供资料是必须还是自愿，以及不提供会有什么后果；还要告知资料当事人有权要求查阅及改正，以及向谁提出（Cap. 486 附表 1 保障資料第 1 原則第 (3) 款）。这些内容通常写成「收集個人資料聲明」。<https://www.elegislation.gov.hk/hk/cap486!zh-Hant-HK>；私隐公署指引：<https://www.pcpd.org.hk/chinese/publications/files/GN_picspps_c.pdf>
-- 无障碍：政府网站（存档资料除外）自 2013 年 1 月 1 日起须符合 W3C WCAG 2.0 或以上 AA 级；政府流动应用程式须在 2019 年 7 月前具备无障碍功能（数字政策办公室 FAQ）。改版时须采用 WCAG 2.2 AA 的说法见于搜索摘要，未核实。<https://www.digitalpolicy.gov.hk/en/our_work/digital_infrastructure/digital_inclusion/accessibility/faq/>
+- 无障碍：政府网站（存档资料除外）自 2013 年 1 月 1 日起须符合 W3C WCAG 2.0 或以上 AA 级；政府流动应用程式须在 2019 年 7 月前具备无障碍功能（数字政策办公室 FAQ）。WCAG 2.2 目前不是强制要求：FAQ 原文是「鼓励」机构酌情采纳 WCAG 2.1／2.2 的新成功标准，改版沿用 WCAG 2.0 AA 这条法定底线即已合规，采用 2.2 属于加分而非义务——此前「改版须用 WCAG 2.2 AA」的说法不准确，已更正。<https://www.digitalpolicy.gov.hk/en/our_work/digital_infrastructure/digital_inclusion/accessibility/faq/>
 - 政府服务要有中英文两个版本（中文和英文都是法定语文），两版内容要对应，不能中文写了的条件英文漏掉。
 
 **不许出现的话：**
