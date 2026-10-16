@@ -61,6 +61,8 @@
 
 **繁體 / 台港**：[`references/locale-zh-hant.md`](references/locale-zh-hant.md) 管用詞和標點（「文件」→「檔案」、「默认」→「預設」）；每份行業檔的「台港市场差异」一節管法規和必須出現的文字，例如台灣借貸要標示總費用年百分率，個資告知依台灣《個人資料保護法》，而不是中國大陸的《個人信息保護法》。
 
+**出處**：法規、國家標準、廠商規範都附原文連結，條號和引文都對過原文。只找到二手轉述的標「（未核实）」，草案標「未生效」。法遵文案上線前仍要請法務依最新原文確認。
+
 **新增行業**：照 [`references/industries/_TEMPLATE.md`](references/industries/_TEMPLATE.md) 寫一份 `references/industries/<id>.md`。判斷腳本會從新檔案第 1 節讀取訊號，不必改程式。
 
 ## 安裝

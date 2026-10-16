@@ -100,6 +100,8 @@ cmd /c mklink /J "$env:USERPROFILE\.claude\skills\yizishi" "$env:USERPROFILE\.ag
 
 **繁体 / 台港**：[`references/locale-zh-hant.md`](references/locale-zh-hant.md) 管用词和标点（「文件」→「檔案」、「默认」→「預設」）；每份行业文件的「台港市场差异」一节管法规和必须出现的话，例如台湾借贷要标示總費用年百分率、个资告知按台湾《個人資料保護法》而不是大陆《个人信息保护法》。
 
+**出处**：法规、国标、厂商规范都附原文链接，条号和引文对过原文。只找到二手转述的标「（未核实）」，草案标「未生效」。合规文案上线前仍要请法务按最新原文确认。
+
 **加一个行业**：照 [`references/industries/_TEMPLATE.md`](references/industries/_TEMPLATE.md) 写一份 `references/industries/<id>.md`。识别脚本从新文件第 1 节读信号，不用改代码。
 
 ## 给你的项目写术语表
@@ -157,7 +159,7 @@ What it adds beyond a generic "humanize this" prompt:
 - **Numbers checked against code**: limits, counts, and durations in the copy must match the values in code.
 - **Test-safe edits**: `scripts/check_copy_anchors.py` finds test and CI anchors that a copy change will break (BREAK), and negative assertions that will silently always pass (VACUOUS).
 - **Per-project conventions**: put your terms, ruled names, and fixed phrasings in `docs/copy-glossary.md`; the skill reads it first.
-- **Industry styles**: twelve built-in style files (AI, SaaS / developer tools, OS / desktop, mobile apps, finance, healthcare, education, government, industrial, e-commerce, gaming, automotive) cover tone, terminology, per-element rules, compliance constraints, and high-risk scenarios. The skill picks one in this order: what you tell it, an `行业：<id>` line in your glossary, then `scripts/detect_industry.py`, which scores the repo by dependencies, directory names, and UI vocabulary. To add an industry, copy `references/industries/_TEMPLATE.md`; the detector reads the new file's signals with no code change.
+- **Industry styles**: twelve built-in style files (AI, SaaS / developer tools, OS / desktop, mobile apps, finance, healthcare, education, government, industrial, e-commerce, gaming, automotive) cover tone, terminology, per-element rules, compliance constraints, and high-risk scenarios. The skill picks one in this order: what you tell it, an `行业：<id>` line in your glossary, then `scripts/detect_industry.py`, which scores the repo by dependencies, directory names, and UI vocabulary. To add an industry, copy `references/industries/_TEMPLATE.md`; the detector reads the new file's signals with no code change. Laws, standards, and vendor guidelines link to the original text, with article numbers and quotes checked against it; anything seen only second-hand is marked 「（未核实）」 (unverified) and drafts are marked as not in force. Have legal confirm compliance copy against the current text before shipping.
 - **Traditional Chinese**: `references/locale-zh-hant.md` covers Taiwan and Hong Kong vocabulary and punctuation, and each industry file has a Taiwan / Hong Kong section on local regulations (for example, Taiwan's Personal Data Protection Act instead of mainland China's PIPL). The detector flags `zh-TW` / `zh-Hant` / `zh-HK` locale files.
 
 **Install**: put this directory in `~/.claude/skills/yizishi` (Claude Code) or `~/.agents/skills/yizishi` (Codex, DeepSeek Harness). To share one copy, clone it once and symlink it (on Windows, use a `mklink /J` junction). Python 3.8+ is required for the scripts.
