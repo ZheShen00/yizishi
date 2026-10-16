@@ -61,16 +61,17 @@
 
 | 厂商 / 规范 | 风格要点（能落到句子上的） | 出处 |
 |---|---|---|
-| Duolingo（反面参照） | 吉祥物 Duo 的唤回提醒（"You made Duo sad""We haven't seen you in a while" 一类）被媒体和用户称为 passive-aggressive、愧疚式营销，Duolingo 自己把它做成了品牌梗。成人语言学习产品拿来做营销可以，K12 和面向未成年人的产品不能照搬：把学习和角色情绪绑定就是这份文件第 8 节禁止的愧疚式唤回 | 媒体报道：<https://www.universityxp.com/news/2025/7/25/we-havent-seen-you-in-a-while-duolingos-passive-aggressive-strategy-for-keeping-users-hooked> |
+| Duolingo（反面参照） | 吉祥物 Duo 的唤回提醒（原文标题引用的"We haven't seen you in a while"，配"sad owl images"和"guilt-inducing messages"）被这篇报道称为 passive-aggressive 的唤回策略；"You made Duo sad" 是网上流传更广的同类文案，但未能在这篇报道里逐字核实出处（未核实）。成人语言学习产品拿来做营销可以，K12 和面向未成年人的产品不能照搬：把学习和角色情绪绑定就是这份文件第 8 节禁止的愧疚式唤回 | 媒体报道：<https://www.universityxp.com/news/2025/7/25/we-havent-seen-you-in-a-while-duolingos-passive-aggressive-strategy-for-keeping-users-hooked> |
 | Khan Academy | 以掌握度（mastery）而非单次分数或排名衡量进度；公开倡导成长型思维（growth mindset），夸努力和方法，不夸「你真聪明」 | <https://blog.khanacademy.org/>（具体文案表述未逐篇核实） |
 | Google Classroom | 作业状态用固定的封闭状态集（已布置 / 已交 / 缺交 / 迟交 / 已退回），到期时间精确到具体日期和时间，不用模糊说法 | <https://support.google.com/edu/classroom> |
 | Canvas（Instructure） | 迟交（Late）和缺交（Missing）是两个不同状态，互不替代；SpeedGrader 批改界面的操作文案只给批改动作本身，不描述系统实现 | <https://www.instructure.com/canvas> |
 | Coursera / edX | Honor Code（诚信承诺）措辞正式但不威胁，说明规则和后果而不预先定罪；证书类文案区分「课程证书」和「专业方向证书」，不混用 | <https://www.coursera.org/about/terms/honor-code>；<https://www.edx.org/honor-code> |
-| Brilliant | 拒绝空洞表扬，强调「自己验证自己学会了」而不是依赖外部打分；把「卡住」当作学习过程的正常部分呈现，不渲染焦虑 | <https://brilliant.org/about/> |
+| Brilliant | 不先讲解步骤，而是先让学习者自己尝试解决问题（pretest 方式），原文："We don't teach how to do something before asking questions. Instead, we pretest on the material, letting the learner try to find a solution before learning the procedure."；AI 辅导「靠提问引导、不直接给答案」，原文说 AI 导师"asks instead of tells, builds confidence instead of dependency, and never, ever just hands you the answer" | <https://brilliant.org/about/> |
 | 国家中小学智慧教育平台 | 官方、克制、公益语气；不用营销词、不堆砌感叹号、不做促销式文案 | <https://www.smartedu.cn/>（页面文案细节未逐条核实） |
 | 学而思 / 猿辅导 / 作业帮 | K12 广告与站内文案受「双减」政策和广告法未成年人代言限制约束，不能出现「不报班就落后」「别人家孩子都在学」一类比较性焦虑表述 | 中共中央办公厅、国务院办公厅《关于进一步减轻义务教育阶段学生作业负担和校外培训负担的意见》（2021），<https://www.gov.cn/zhengce/2021-07/24/content_5627132.htm> |
 | 中国大学 MOOC（爱课程）/ 雨课堂 / 超星学习通 | 校园场景特有词：随堂测验、签到、学分认定、慕课，和企业在线教育用词分开，不混用「课程」和「培训」 | <https://www.icourse163.org/>；<https://www.yuketang.cn/>；<https://www.chaoxing.com/>（具体文案未逐条核实） |
 | 钉钉家校 | 家校沟通场景用词克制，面向家长统一用「您」，通知只陈述事实（出勤、作业完成情况），不做评价性总结 | <https://www.dingtalk.com/>（具体文案未逐条核实） |
+| W3C 认知无障碍指南（COGA） | 用简单时态和主动语态写说明，原文：「Use a simple tense and voice」；同一功能全站用同一个图标 / 控件样式，原文：「Icons, controls, and menu items that have same function and role have the same look and style」；长说明拆成短段落、留白，原文：「small or short chunks of content, sections, or boxes」。面向儿童和学习障碍学生的教育产品，文案长度和界面一致性要按这份指南的标准收紧，比普通产品更严格 | <https://www.w3.org/TR/coga-usable/>（section 4.4.2、4.2.3、3.3.2/4.4.10） |
 
 ## 4. 术语和叫法
 

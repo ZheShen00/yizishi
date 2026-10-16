@@ -112,10 +112,10 @@ def dep_pattern(dep):
     """依赖名只在清单里「像依赖名」的位置算命中：
     前面是行首（可缩进：requirements.txt、pubspec.yaml、go.mod 的 require 块）、引号、
     XML 标签的「>」（Info.plist 的 <key>、pom.xml 的 <artifactId>）或「.」（android.permission.X）；
-    后面跟引号、版本号运算符、「<」或行尾。`@scope/*` 这种结尾的通配按前缀算。
+    后面跟引号、版本号运算符、「<」或行尾。以 `*` 结尾的（`@scope/*`、`com.unity.*`）按前缀算。
     句中前面是空格的不算：package.json 的 description 里写的 "an ai tool" 不是依赖 ai。"""
     d = dep.lower().strip()
-    if d.endswith("/*"):
+    if d.endswith("*"):  # `@scope/*`、`com.unity.*`、`@aws-sdk/client-*`：按前缀算
         body = re.escape(d[:-1]) + r"[\w.-]+"
     else:
         body = re.escape(d)

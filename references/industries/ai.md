@@ -46,20 +46,22 @@
 
 | 厂商 / 规范 | 风格要点（能落到句子上的） | 出处 |
 |---|---|---|
-| OpenAI（ChatGPT） | 页面底部固定免责声明，简短、不渲染焦虑：「ChatGPT can make mistakes. Check important info.」；曾用过「Consider checking important information」，具体文案随版本变化，以产品内实际文案为准 | <https://news.ycombinator.com/item?id=44142231>（二手引用，未逐版本核实原文） |
+| OpenAI（ChatGPT） | 页面底部固定免责声明，简短、不渲染焦虑：「ChatGPT can make mistakes. Check important info.」为 2026 年 10 月的当前文案（多个独立信源交叉确认）；早期版本用过「Consider checking important information」，说明这句话本身也在不断精简，具体文案以产品内实际显示为准 | <https://itstrategists.com/chatgpt-can-make-mistakes-consider-checking-important-information/>（独立信源交叉确认，非官方文档，仍按产品内实际文案为准） |
 | OpenAI（Model Spec） | 拒答要简短、不说教：「Refusals should never be preachy」；典型拒答只有一句道歉 + 一句做不到的陈述，不加「作为 AI 语言模型」这类自我介绍 | <https://model-spec.openai.com/2025-12-18.html> |
-| Anthropic（Claude） | 支持文档明确说"不要把 Claude 当成单一真相来源"，高风险建议要自己核实；模型训练数据使用默认开启、可在隐私设置关闭（「Help improve Claude」类开关），关闭后历史记录仍保留一段时间用于安全技术目的 | <https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on>（二手报道综合，未截图核实设置页原文） |
+| Anthropic（Claude） | 支持文档原话：「Users should not rely on Claude as a singular source of truth and should carefully scrutinize any high-stakes advice given by Claude.」（已核实）；「Help improve Claude」训练开关消费者账号默认开启，开启时对话最长保留 5 年用于模型训练；关闭后不影响已经在训练中或已训练完的模型，只影响后续新对话，删除的对话不用于训练（已核实） | <https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on>、<https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-personal-data> |
 | Google（Gemini / PAIR） | 免责声明走克制路线：「Gemini can make mistakes, so double-check it」；People + AI Guidebook 把错误分为「系统能力不足」和「上下文误解」两类，要求分别给出路径，不是一句「出错了」糊弄过去 | <https://pair.withgoogle.com/chapter/explainability-trust/>、<https://pair.withgoogle.com/chapter/People%20+%20AI%20Guidebook%20-%20Errors%20+%20Graceful%20Failure.pdf> |
 | Microsoft（HAX Toolkit） | 18 条人机交互准则，前两条是「讲清系统能做什么」「讲清系统做得有多好」；其余包括讲清系统为什么这样做、让用户能纠正、随时间学习用户习惯等，分「初次」「交互中」「出错时」「长期」四组 | <https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/> |
-| Microsoft 365 Copilot | 免责声明措辞「AI-generated content might be incorrect」，曾默认开启后改为默认关闭（企业管理员可通过策略恢复显示），说明免责声明不是写一次就不用管，要跟产品的信任状况一起调整 | <https://www.windowslatest.com/2025/11/02/microsoft-365-copilot-drops-ai-can-make-mistakes-alert-by-default/>（二手报道） |
+| Microsoft 365 Copilot | 免责声明措辞「AI-generated content might be incorrect」；2025 年 11 月曾宣布默认关闭该提示，5 天内撤回，改回「始终显示」，管理员只能加码（新增「AI Disclaimer with Heightened Awareness」）不能默认关闭——免责声明的呈现方式自己反复横跳，也说明这不是写一次就不用管的文案，要跟着产品信任状况调整（已核实） | <https://www.windowslatest.com/2025/11/02/microsoft-365-copilot-drops-ai-can-make-mistakes-alert-by-default/>、<https://brightideasagency.com/blog/microsoft-reverses-course-on-copilot-ai-disclaimersa> |
 | GitHub Copilot | Responsible-use 文档明确「回答和摘要可能不准确或不完整」，要求用户复核、尤其是涉及安全的代码；建议书面提醒而不是让用户自己猜 | <https://docs.github.com/en/copilot/responsible-use/chat>、<https://docs.github.com/en/copilot/responsible-use/inline-suggestions> |
 | Apple（HIG, Generative AI） | 用户要能拒绝、撤销、重试生成结果，在生成内容旁放 Edit / Undo / Retry / Adjust 一类控件，用户修改生效时要有明确反馈；讲清哪里用了 AI，「Never trick someone into thinking they're interacting with or viewing content authored by a human」；已知局限要提前说，并说明怎样得到好结果、为什么会出差结果 | <https://developer.apple.com/design/human-interface-guidelines/generative-ai> |
-| 国家网信办等四部门《人工智能生成合成内容标识办法》 | 区分「显式标识」（界面上文字、图形、声音等用户可感知）和「隐式标识」（文件元数据里的技术标记），2025 年 9 月 1 日起施行 | <https://www.cac.gov.cn/2025-03/14/c_1743654685896173.htm> |
+| 国家网信办等四部门《人工智能生成合成内容标识办法》 | 第三条原文定义：显式标识是「以文字、声音、图形等方式呈现并可以被用户明显感知到的标识」，隐式标识是「采取技术措施在生成合成内容文件数据中添加的，不易被用户明显感知到的标识」；第四条要求提供下载、复制、导出功能时文件必须带着显式标识一起走；第十条禁止恶意删除、篡改、伪造、隐匿标识。2025 年 9 月 1 日起施行（已核实） | <https://zh.wikisource.org/zh-hant/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%94%9F%E6%88%90%E5%90%88%E6%88%90%E5%86%85%E5%AE%B9%E6%A0%87%E8%AF%86%E5%8A%9E%E6%B3%95>、<https://www.cac.gov.cn/2025-03/14/c_1743654685896173.htm> |
+| 国内主流大模型应用（文心一言、通义、豆包、Kimi 等） | 2025 年 4 月的第三方实测：这几款当时「均未在文本生成页面添加提示标识」，图片/视频类标识更早落地，如豆包会在生成图片右下角打「豆包AI」水印；2025 年 9 月标识办法施行后，中央网信办「清朗」专项行动点名要求豆包、元宝、千问、文心一言等「强化 AI 生成合成内容标识要求落地」。文本类提示语各家措辞不统一，写作时以产品当前实际文案为准，不要假设和某一家一致（已核实，但反映的是办法施行前的测试结果，施行后各家具体文案未逐一复核） | <https://m.mp.oeeee.com/a/BAAFRD0000202504151069542.html>、<https://www.36kr.com/p/3965878920435593> |
+| C2PA（Coalition for Content Provenance and Authenticity） | 由 OpenAI、Google、Microsoft、Adobe、Meta、TikTok 等共同参与的内容溯源技术标准联盟；Content Credentials 的定位是「像给数字内容贴营养成分表」，记录内容来源和编辑历史，供任何人随时查验——国内「隐式标识」要解决的技术问题在国际上对应的是这套标准，写隐式标识相关文案时可以参照这个类比 | <https://c2pa.org/>（已核实） |
 | GB 45438-2025《网络安全技术 人工智能生成合成内容标识方法》 | 标识办法的技术配套强制性国家标准，规定显式 / 隐式标识的具体技术方法 | <https://www.cac.gov.cn/2025-09/05/c_1758792061408012.htm> |
 | 抖音（平台执行细则） | 2025 年 9 月 1 日起试行：创作者可主动给作品加 AI 内容标识；创作者没声明、平台技术检测到疑似 AI 生成的内容，自动加「疑似使用了AI生成技术，请谨慎甄别」 | 媒体报道：<https://news.qq.com/rain/a/20250901A059O000> |
 | 腾讯 / 快手 / B 站 / DeepSeek 等 | 标识办法施行时公开宣布已上线 AI 生成内容标识功能；各家界面措辞不一样，写作时以各产品当前实际文案为准，不要假设和抖音的提示语一致 | 媒体综述：<https://m.thepaper.cn/newsDetail_forward_31523045> |
-| 《互联网信息服务深度合成管理规定》 | 对人脸、声音等生成或编辑的深度合成内容，要求以显著方式提示公众，且对被编辑对象的人脸、声纹等生物识别信息编辑需取得其单独同意；是暂行办法第 12 条标识义务援引的上位规定 | <http://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm>（官方发布页，条款原文未逐条复核） |
-| EU AI Act 第 50 条 | 直接与自然人交互的系统（聊天机器人等）必须让"理性的普通用户"在首次交互时就能意识到在和 AI 对话（上下文已经明显除外）；合成内容要有机器可读的标记。第 50 条随第 113 条的通用日期 2026 年 8 月 2 日起生效（原文未把第 50 条列入提前或延后的分阶段清单，走通用日期）；2026 年 7 月生效的 Digital Omnibus on AI（Regulation (EU) 2026/1744）另给 2026-08-02 前已上市的生成式 AI 系统一个过渡期，把第 50(2) 条标记义务的合规期限延到 2026 年 12 月 2 日，第 50 条其余义务不受影响 | Regulation (EU) 2024/1689 第 113 条：<https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng>（经 Digital Omnibus 修订后的现行合并版）；Regulation (EU) 2026/1744（CELEX 32026R1744，已生效）：<https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32026R1744> |
+| 《互联网信息服务深度合成管理规定》 | 第十四条原文：「深度合成服务提供者和技术支持者提供人脸、人声等生物识别信息编辑功能的，应当提示深度合成服务使用者依法告知被编辑的个人，并取得其单独同意」；第十七条要求「在生成或者编辑的信息内容的合理位置、区域进行显著标识，向公众提示深度合成情况」；是暂行办法第 12 条标识义务援引的上位规定（已核实） | <http://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm> |
+| EU AI Act 第 50 条 | 直接与自然人交互的系统（聊天机器人等）必须让"理性的普通用户"在首次交互时就能意识到在和 AI 对话（上下文已经明显除外）；合成内容要有机器可读的标记。第 50 条义务本身没有被 Digital Omnibus 推迟，自 2026 年 8 月 2 日起已生效；Digital Omnibus on AI（Regulation (EU) 2026/1744，2026 年 7 月 27 日生效）给 2026-08-02 前已上市的系统一个 4 个月宽限期，把第 50(2) 条水印义务的合规期限延到 2026 年 12 月 2 日，第 50 条其余义务不受影响；该 Omnibus 真正推迟的是附件三高风险系统的义务（推到 2027 年 12 月 2 日），不要和第 50 条弄混（已核实） | Regulation (EU) 2024/1689 第 113 条：<https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng>；Regulation (EU) 2026/1744：<https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32026R1744>；第三方解读交叉确认：<https://www.actuia.com/en/news/ai-act-obligations-in-force-and-delays-under-omnibus-2026-1744/> |
 
 ## 4. 术语和叫法
 
@@ -170,13 +172,13 @@
 - 生成内容在合理位置有显式标识，用语遵循官方定义的「显式标识」「隐式标识」，不要自造说法（如用「水印」代替「标识」）。标识办法要求导出、下载、复制、转发等场景保留标识，产品的导出 / 分享功能文案和实现都要覆盖这点。
 - 对话式界面在用户首次使用时让其明确知道在和 AI 交互，除非上下文已经非常明显（EU AI Act 第 50(1) 条的原则；国内同样要求以显式标识落实类似效果）。
 - 涉及模型训练数据使用用户内容的，开关 / 说明文案要讲清楚默认状态（默认开启还是默认关闭）、关闭后影响的范围（新对话 / 历史记录 / 多久生效），不能用一句「改进我们的服务」糊弄过去。
-- 生成或编辑他人人脸、声纹的功能，上传素材前要有同意确认，不能默认用户已经获得授权（《互联网信息服务深度合成管理规定》）。
+- 生成或编辑他人人脸、声纹的功能，上传素材前要有同意确认，不能默认用户已经获得授权（《互联网信息服务深度合成管理规定》第十四条）。
 
 不许出现的话：
 
 - 「绝对准确」「100% 正确」「保证无错」等绝对化用语，不管是营销文案还是功能说明，只要和模型输出的可靠性有关就不能用。
 - 让用户误以为在和真人客服对话的话术（刻意隐瞒 AI 身份），除非产品场景已经被监管豁免（如内部技术支持工具的明显上下文）。
-- 「恶意删除、篡改、伪造、隐匿」生成内容标识的功能或引导（标识办法明令禁止，产品设计本身也不能提供这类选项）。
+- 「恶意删除、篡改、伪造、隐匿」生成内容标识的功能或引导（标识办法第十条明令禁止，产品设计本身也不能提供这类选项）。
 
 必须的格式：
 
@@ -187,10 +189,10 @@
 对应法规 / 标准出处：
 
 - 《生成式人工智能服务管理暂行办法》第 4 条（内容底线）、第 9 条（服务协议与用户权利义务）、第 12 条（生成内容标识）、第 15 条（投诉举报入口）。<https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm>
-- 《人工智能生成合成内容标识办法》（显式 / 隐式标识定义、禁止删除篡改条款）。<https://www.cac.gov.cn/2025-03/14/c_1743654685896173.htm>
+- 《人工智能生成合成内容标识办法》第三条（显式 / 隐式标识定义）、第四条（导出 / 下载保留标识）、第十条（禁止删除篡改）。<https://www.cac.gov.cn/2025-03/14/c_1743654685896173.htm>
 - GB 45438-2025《网络安全技术 人工智能生成合成内容标识方法》（技术实现要求）。<https://www.cac.gov.cn/2025-09/05/c_1758792061408012.htm>
-- 《互联网信息服务深度合成管理规定》（人脸 / 声纹等深度合成的同意与显著提示义务）。<http://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm>
-- EU AI Act 第 50 条（交互透明义务、合成内容标记义务）：随第 113 条通用日期 2026-08-02 生效；Digital Omnibus on AI（Regulation (EU) 2026/1744，2026-07-27 生效）给 2026-08-02 前已上市的生成式 AI 系统一个过渡期，第 50(2) 条标记义务的合规期限延到 2026-12-02，第 50 条其余义务不受影响。<https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng>、<https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32026R1744>
+- 《互联网信息服务深度合成管理规定》第十四条（人脸 / 声纹编辑的单独同意）、第十七条（显著提示义务）。<http://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm>
+- EU AI Act 第 50 条（交互透明义务、合成内容标记义务）：未被 Digital Omnibus 推迟，2026-08-02 起已生效；Digital Omnibus on AI（Regulation (EU) 2026/1744，2026-07-27 生效）只给 2026-08-02 前已上市的系统一个 4 个月宽限期，把第 50(2) 条标记义务的合规期限延到 2026-12-02，第 50 条其余义务不受影响（已核实，见第 3 节）。<https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng>、<https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32026R1744>
 
 ## 7. 高风险场景
 
@@ -210,10 +212,10 @@
 
 **安全拒答（违法、自伤、未成年人保护相关请求）**
 
-拒答简短、不说教，不堆砌"我们鼓励""请遵守"这类教导式语言；能给替代路径时给（比如换个问法、相关求助资源），不能给时就停在简短陈述，不硬加一段说教收尾。
+拒答简短、不说教，不堆砌"我们鼓励""请遵守"这类教导式语言；能给替代路径时给（比如换个问法、相关求助资源），不能给时就停在简短陈述，不硬加一段说教收尾。OpenAI Model Spec 原文对拒答的要求是「Refusals should never be preachy」，典型拒答只有「一句简短道歉 + 一句做不到的陈述」，例句就用「I can't help with that」，不附加「作为 AI 语言模型」这类自我介绍（已核实）。<https://model-spec.openai.com/2025-12-18.html>
 
 > 中：「这个请求我无法处理。」（如适用，另起一行给资源或替代方向，不混在同一句话里）
-> 英：「I can't help with that request.」
+> 英：「I can't help with that.」
 
 **生成内容标识被去除或导出丢失**
 
@@ -305,9 +307,9 @@
 
 ## 11. 台港市场差异
 
-- 台湾：《人工智慧基本法》已于 115 年（2026 年）1 月 14 日公布施行，主管机关是国科会。它是原则法，没有逐字规定标识用语：
-  - 第 4 条第 5 款要求「人工智慧之產出應做適當資訊揭露或標記」。
-  - 第 5 条规定，被认定为高风险应用的产品或系统，「應明確標示注意事項或警語」。
+- 台湾：《人工智慧基本法》已于民国 115 年（2026 年）1 月 14 日公布（已核实；具体施行日期以行政院后续公告为准），主管机关是国科会。它是原则法，没有逐字规定标识用语：
+  - 第 4 条第 5 款要求「人工智慧之產出應做適當資訊揭露或標記」（已核实）。
+  - 第 5 条第 2 项规定，被认定为高风险应用的产品或系统，「應明確標示注意事項或警語」（已核实）。
   - 具体子法还在制定中。<https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0160093>
 - 台湾广告：网路广告平台刊登或推播的广告，如果使用深度伪造技术或人工智慧生成的个人影像，必须在广告中揭露（《詐欺犯罪危害防制條例》第 31 条第 1 项第 4 款）。<https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0080226&flno=31>
 - 香港：没有 AI 专门立法。数字政策办公室的《香港生成式人工智能技術及應用指引》（1.1 版，2025 年 12 月）不具法律约束力，是建议性质。指引没有规定全站统一的标识文字或图标样式；媒体报道的理解是，针对深伪影像、财务资料等高风险内容，建议开发者预设浮水印标识以便追溯和明确责任，不是对所有 AI 生成内容都要求固定用语。<https://www.digitalpolicy.gov.hk/tc/our_work/data_governance/policies_standards/ethical_ai_framework/doc/HK_Generative_AI_Technical_and_Application_Guideline_tc.pdf>（原文为扫描版 PDF，中文内文未能逐字提取核对，以上转述自 <https://unwire.hk/2025/04/17/aiguidelines-hong-kong/ai/> 等媒体报道，建议正式引用前核对指引原文对应段落）

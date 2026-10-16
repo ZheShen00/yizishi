@@ -43,18 +43,19 @@
 | Microsoft Writing Style Guide | 「sorry」只用于 Microsoft 产品确实出错、给用户造成真实影响的场景；其余用更轻的词 | <https://learn.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/s/sorry>（已核实） |
 | Stripe 开发者文档 | 错误对象区分 `type`：只有 `card_error` 的 `message` 明确标注「可以直接显示给用户」，其余错误类型（`api_error`、`invalid_request_error`）的 message 面向开发者，不该原样进终端用户界面；`request_log_url` 是跳转到控制台请求日志的链接，不是裸露的一串 ID | <https://docs.stripe.com/api/errors>（已核实） |
 | Stripe 密钥管理指南 | 密钥在控制台只显示一次；要求立刻存入密钥管理工具；明确写「Stripe 永远不会向你索要密钥」；建议用权限范围受限的 restricted key 而不是全量密钥 | <https://docs.stripe.com/keys-best-practices>（已核实） |
-| AWS Cloudscape Design System | 报错按作用域分级：字段级用 inline，整页校验用 page alert，资源操作失败用 flashbar，组件渲染失败用组件内 alert，不新造错误样式；空状态标题句首大写、无句末标点，正文不用「please」「thank you」「省略号」「感叹号」；清空筛选的按钮固定写「Clear filter」 | <https://cloudscape.design/patterns/general/errors/>、<https://cloudscape.design/patterns/general/empty-states/>（已核实） |
+| AWS Cloudscape Design System | 报错按作用域分级：字段级用 inline，整页校验用 page alert，资源操作失败用 flashbar，组件渲染失败用组件内 alert，不新造错误样式；空状态标题加粗、无句末标点（例「No distributions」「No matches」），正文原文禁用「please、thank you、省略号 ...、& 符号、e.g./i.e./etc.」；清空筛选的按钮固定写「Clear filter」（已核实） | <https://cloudscape.design/patterns/general/errors/>、<https://cloudscape.design/patterns/general/empty-states/> |
 | AWS Cloudscape（加载与刷新） | 表格优先用骨架屏而不是转圈（不打乱列宽）；手动刷新成功后显示时间戳，例句「Last updated December 21, 2023, 14:29 (UTC+01:00)」；加载文案不用冠词和句末标点，「Loading items」而不是「Loading the items.」；刷新完成要用 ARIA live region 播报 | <https://cloudscape.design/patterns/general/loading-and-refreshing/>（已核实） |
-| IBM Carbon Design System | 通知按类型限长：行内通知 ≤2 行，toast ≤3 行；系统生成的通知要给背景，任务触发的通知可以更短（用户本来就在上下文里）；关键报错/错误通知不自动消失；例句「Credentials not found. Please verify your login information and try again.」 | <https://carbondesignsystem.com/patterns/notification-pattern/>（已核实） |
+| IBM Carbon Design System | 通知按类型限长，原文：行内通知「Keep the message under two lines」，toast「should not exceed three lines」；系统生成的通知要给背景，任务触发的通知可以更短（用户本来就在上下文里，如「Credentials can't be found」这类任务触发场景的例子）；关键/紧急消息不能用定时自动消失的通知（原文「Don't use notifications that dismiss on a timer for critical or emergency messages」） | <https://carbondesignsystem.com/patterns/notification-pattern/>（已核实） |
 | IBM Carbon（空状态） | 正向措辞：用「Start by adding data assets」而不是「You don't have any data assets」；结构是标题（简短正向）+ 正文（下一步、为什么是空的）+ 一个主操作；不放多个平行选项，不引用别的功能区 | <https://carbondesignsystem.com/patterns/empty-states-pattern/>（已核实） |
-| Atlassian Design System | 四类消息职责分明：错误＝告知已发生的问题和下一步；警告＝提前预告可能丢数据或出错的变化；成功＝和用户一起庆祝完成；信息＝提供有助于行动的额外信息；多数人是扫读，每个词都要有用，删掉无关细节 | <https://atlassian.design/foundations/content/designing-messages> |
-| GitHub | 删除仓库走四段式确认：勾选「我想删除这个仓库」→ 勾选「我已阅读并理解这些后果」→ 输入仓库全名验证 → 按钮文字就是「Delete this repository」（不是「确定」）；这是 delete workspace / revoke key 类操作的范式 | <https://docs.github.com>（已核实，具体删除仓库文档页面未逐一核实） |
-| Vercel | 环境名固定用 Production / Preview / Local，不混用「线上 / 预览 / 本地」等同义词；部署动作固定词是 Redeploy、Promote to Production、Rollback；部署状态是一套固定枚举：Queued → Initializing → Building → Ready / Error / Canceled，界面的状态标签直接对应这套枚举 | <https://vercel.com/docs/deployments>；状态枚举：<https://vercel.com/docs/rest-api/deployments/list-deployments>、<https://vercel.com/geist/deployment-status> |
+| Atlassian Design System | 四类消息职责分明，原文：error "alerts people of a problem that has occurred and informs them what to do next"；warning "gives advanced notice of a potential change that may result in loss of data or an error state"；success "celebrates success along with the people using our apps"；information "provides additional information to motivate people"（已核实） | <https://atlassian.design/foundations/content/designing-messages> |
+| GitHub Primer（content guidelines） | 报错要具体，不用生硬判词或代码：Do「Enter a credit card number」，Don't「Field required」；不堆道歉：Do「All checks failed」，Don't「Sorry, all checks failed」；不耍幽默：Do「Some checks failed」，Don't「Oops, some checks failed」；按钮文字以祈使动词开头、句子大小写、不加句末标点：Do「Save preferences」，Don't「Save email preferences.」 | <https://primer.style/foundations/content/>（已核实） |
+| GitHub（删除仓库确认流程） | 删除仓库走四段式确认：点击「Delete this repository」→ 弹窗勾选「I want to delete this repository」→「I have read and understand these effects」→ 输入仓库全名验证 → 最终按钮仍是「Delete this repository」（不是「确定」）；这是 delete workspace / revoke key 类操作的范式 | <https://docs.github.com/en/repositories/creating-and-managing-repositories/deleting-a-repository>（已核实） |
+| Vercel | 环境名固定用 Production / Preview / Local，不混用「线上 / 预览 / 本地」等同义词；部署动作固定词是 Redeploy、Promote to Production、Rollback；部署状态 REST API 的 `readyState` 固定枚举是 QUEUED、INITIALIZING、BUILDING、READY、ERROR、CANCELED（另有 BLOCKED、DELETED 两个边缘状态），界面的状态标签直接对应这套枚举，不要自造新状态词（已核实） | <https://vercel.com/docs/deployments>；状态枚举：<https://vercel.com/docs/rest-api/deployments/list-deployments> |
 | Mailchimp Content Style Guide | 核心原则「直白」：「我们把花哨去掉，把清晰看得比什么都重」；语气要跟着读者当下的情绪变化，而不是固定一种；宁可清楚也不要有趣（原话「更重要的是清楚，而不是有趣」） | <https://styleguide.mailchimp.com/voice-and-tone/>（已核实；页面没有报错 / 计费专项内容） |
 | Ant Design 文案规范 | 报错措辞倾向「无法完成」而不是生硬的「失败」；以用户为主体、精简、一致的通用原则见 `references/sources.md`，这里只强调软件后台里报错不要用生硬判决式的词 | <https://ant.design/docs/spec/copywriting-cn/>（已核实，页面本身没有危险操作 / 权限报错专项内容） |
 | 企业微信开发者文档 | 应用简介、推荐语「应真实准确地介绍产品功能及其特色，禁止出现'最佳''唯一''顶级'等绝对性词汇或其他夸大宣传的描述用语」——可直接套用到升级 / 付费引导文案的禁用词表 | <https://developer.work.weixin.qq.com/document/path/90569>（已核实） |
 | 飞书开放平台多语言设计规范 | 只有排版空间规则，没有措辞规则：中文翻成英文等场景要给文案预留额外空间（10 字母以内的词建议预留 100%–200% 空间），优先上下结构而不是并排结构来容纳变长的文案 | <https://open.feishu.cn/document/design-specification/internationalization/multilingual-design-specification>（已核实；仅排版空间规则，不含文案措辞规则） |
-| 《消费者权益保护法实施条例》第九条（国务院令第 778 号，2024 年 7 月 1 日起施行） | 以自动展期、自动续费方式提供服务的，要在消费者接受服务前和自动续费等日期前，以显著方式提请消费者注意；SaaS 的续费提醒、试用转付费提示直接受这条约束（见第 6 节） | <https://www.moj.gov.cn/pub/sfbgw/jgsz/jgszjgtj/jgtjlfej/lfejtjxw/202501/t20250102_512298.html> |
+| 《消费者权益保护法实施条例》第十条（国务院令第 778 号，2024 年 7 月 1 日起施行） | 原文：「经营者采取自动展期、自动续费等方式提供服务的，应当在消费者接受服务前和自动展期、自动续费等日期前，以显著方式提请消费者注意」；SaaS 的续费提醒、试用转付费提示直接受这条约束（见第 6 节）（已核实） | <https://www.hunan.gov.cn/zqt/zcsd/202403/t20240320_33257807.html>、<https://www.moj.gov.cn/pub/sfbgw/jgsz/jgszjgtj/jgtjlfej/lfejtjxw/202501/t20250102_512298.html> |
 
 ## 4. 术语和叫法
 
@@ -222,8 +223,8 @@
 
 软件行业没有统一的行业监管机构，但计费、续费、广告用语这几类有明确法规约束；无障碍遵循 WCAG 标准。
 
-- **广告用语**：《中华人民共和国广告法》第九条第（三）项禁止使用「国家级」「最高级」「最佳」等绝对化用语；产品内的升级引导、功能介绍文案如果带推广性质，同样不能用「最强大的 AI」「唯一一款」这类词——这不只是文风问题，是广告法硬约束。
-- **自动续费提醒**：《消费者权益保护法实施条例》第九条（2024 年 7 月 1 日起施行，见第 3 节）要求以自动续费、自动展期方式提供服务的经营者，在扣费前以显著方式提醒消费者；界面上必须在扣费前的合理时间展示续费日期、金额、取消路径，不能把这条提醒做得比周围文字更小或更浅。
+- **广告用语**：《中华人民共和国广告法》第九条第（三）项原文「使用'国家级'、'最高级'、'最佳'等用语」，列为广告禁止内容之一（已核实）；产品内的升级引导、功能介绍文案如果带推广性质，同样不能用「最强大的 AI」「唯一一款」这类词——这不只是文风问题，是广告法硬约束。
+- **自动续费提醒**：《消费者权益保护法实施条例》第十条（2024 年 7 月 1 日起施行，见第 3 节）要求以自动续费、自动展期方式提供服务的经营者，在扣费前以显著方式提醒消费者；界面上必须在扣费前的合理时间展示续费日期、金额、取消路径，不能把这条提醒做得比周围文字更小或更浅。
 - **按钮解决方案（EU Consumer Rights Directive 2011/83/EU 第 8(2) 条）**：触发付费义务的按钮必须用清楚无歧义的文字标明会产生付款义务，不能写「继续」「提交」这类看不出要花钱的词；中文产品面向欧盟用户时，「立即购买」「确认支付 ¥99」这类写法符合要求，「下一步」不符合。
 - **ROSCA（美国 Restore Online Shoppers' Confidence Act，15 U.S.C. §§ 8401–8405）**：面向美国用户的订阅类产品，自动续费条款要在收费前「清楚显著」地披露，并提供简单的取消路径；取消流程不能比订阅流程更复杂（取消入口藏在客服邮件、多层弹窗里属于违规风险）。
 - **Dark pattern（FTC「Bringing Dark Patterns to Light」报告，2022 年 9 月发布）**：报告确认列举了虚假倒计时 / 虚假紧迫感（false urgency，如不真实的倒计时和「仅限今天」提示）、confirmshaming（用羞耻感引导用户远离对商家不利的选项）等暗黑模式类型；这里的中文示例句「不，我不想要更快的速度」是本文自拟的说明性例句，不是报告原文翻译。参见 <https://www.ftc.gov/reports/bringing-dark-patterns-light>。
@@ -323,6 +324,8 @@
 | 亲，欢迎升级尊享版哦～ | 欢迎使用 Team 版。 | 电商称呼腔混进 B2B 后台 |
 | 下一步（按钮，点击后立刻扣费 ¥99） | 立即支付 ¥99 | 按钮看不出会花钱，不符合「按钮解决方案」要求 |
 | 输入有误，请检查后重试 | Webhook 地址必须以 https:// 开头。 | 没点名具体字段和具体要求，用户不知道哪里错 |
+| Field required | Enter a credit card number | GitHub Primer 原文 Do/Don't 示例：报错要点名具体对象，不是泛泛的「必填」 |
+| Sorry, all checks failed | All checks failed | GitHub Primer 原文：不必要的道歉，失败本身不是用户的错，不用先道歉 |
 
 ## 10. 审查时加查的项
 
@@ -343,7 +346,7 @@
   - 网路购买享有 7 日解除权（《消費者保護法》第 19 条）。不过「非以有形媒介提供之數位內容或一經提供即為完成之線上服務」，经消费者事先同意才提供的，可以排除解除权（《通訊交易解除權合理例外情事適用準則》第 2 条第 5 款）。
   - 落到文案：付费下载、开通订阅前，要有单独的确认句，说明一经提供即无法依消保法解除契约，不能把这层同意藏在服务条款里。<https://law.moj.gov.tw/LawClass/LawSingleRela.aspx?PCODE=J0170012&FLNO=2&ty=L>
 - 香港：没有通用的网购冷静期。误导性遗漏（第 13E 条）、具威嚇性的营业行为（第 13F 条）由《商品說明條例》（Cap. 362）第 2B 部「不良營商手法」规管，该部分于 2013 年 7 月 19 日生效。升级引导、续费说明不能隐瞒价格和续费条件。<https://www.elegislation.gov.hk/hk/cap362!zh-Hant-HK>
-- 第 6 节引用的《广告法》第九条、《消费者权益保护法实施条例》只适用大陆，台港站要换成上面的依据。
+- 第 6 节引用的《广告法》第九条、《消费者权益保护法实施条例》第十条只适用大陆，台港站要换成上面的依据。
 - 个资：台湾适用《個人資料保護法》（蒐集时依第 8 条告知），香港适用《個人資料（私隱）條例》（Cap. 486），不是大陆《个人信息保护法》。
 
 用词差异（`locale-zh-hant.md` 已有的 软件、程序、服务器、默认 等不再列）：

@@ -89,6 +89,8 @@
 | GB 2894-2025《安全色和安全标志》 | 四种安全色（黄/红/蓝/绿）对应四类标志（警告/禁止/指令/提示），形状和颜色强制绑定，替代旧版 GB 2893-2008、GB 2894-2008、GB 7231-2003；2025-05-30 发布，2026-03-01 实施 | <https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=26CD7C428F2BF6AE971F84D22D7B72BB>（国家标准全文公开系统） |
 | ANSI/ISA-101.01-2015（高性能 HMI 设计） | 静态文字尽量少用缩写，因为缩写难翻译成其他语言，并为翻译预留空间；数值显示带工程单位（如 "42.3 °C"、"55.2 kPa"）；正常工艺颜色克制（灰度为主），鲜艳颜色留给异常状态 | <https://www.isa.org/standards-and-publications/isa-standards/isa-101-standards>（标准原文付费；「Minimize abbreviations as they may be difficult to translate to other languages」一句经网上流传的标准节选核对） |
 | ASD-STE100 Simplified Technical English | 一个概念只用一个受控词，不轮换近义词；指令类句子不超过 20 个英文词，说明类句子不超过 25 个词；不许为了缩短句子而省略主语、动词或冠词，因为那样只会制造歧义 | <https://www.asd-ste100.org/>（官方规范需在官网申请下载；词数门槛经多份规范解读交叉核对，条号随版本变动，引用时以官方当前版本为准） |
+| EEMUA 191《Alarm Systems: A Guide to Design, Management and Procurement》 | 英国工程设备与材料用户协会（EEMUA）发布的报警系统指南，是 ANSI/ISA-18.2、IEC 62682 之外另一个被业界反复引用的报警负荷基准来源（见第 3 节 Honeywell 行）；具体的"每操作员每小时/每 10 分钟可接受报警数"等量化门槛写在付费正文里，本次没有可公开核实的原文出处，写进项目文档时标"（未核实，具体数值以官方发行版为准）"，不要凭印象编数字 | <https://www.eemua.org/Products/Publications/EEMUA-Publication-191.aspx>（官网页面当前访问返回 403，未能直接核实；标准存在性和书名经多方引用交叉确认） |
+| IEC 62682《Management of alarm systems for the process industries》 | 国际电工委员会标准，内容与 ANSI/ISA-18.2 对齐，是本文件第 6 节"报警结构"要求的国际版出处；具体条款编号以当前有效版本为准 | <https://webstore.iec.ch/>（标准名称和与 ISA-18.2 的对应关系经多方引用确认，具体页面本次未能核实，以 IEC 官网当前检索结果为准） |
 
 ## 4. 术语和叫法
 
@@ -276,6 +278,7 @@
 | Your area will undergo line maintenance soon, please be aware | Scheduled power outage 09:00–12:00 on Oct 18, affecting Zone 3. Early restoration will be announced separately. | 同上 |
 | 设置已更新 | 联锁整定值 TSH-301 由 85 °C 改为 90 °C，关联高温联锁跳车保护，操作人：王伟，10-16 09:12。 | 安全相关整定值的改动不能用通用的「设置已更新」一笔带过，要带旧值、新值、关联保护和操作人 |
 | Settings updated | Interlock setpoint TSH-301 changed from 85 °C to 90 °C (drives the high-temperature trip interlock). Changed by Wang Wei, 09:12 on 10-16. | 同上 |
+| Siemens iX 官方原文："Something happened." / "An error occurred." | "Failed to upload file due to connection error."（原文引用，出处见第 3 节 Siemens Industrial Experience） | 官方写作规范点名反对的正是这类空话；工业报警、报错同样要把对象、原因写进句子里，不能停在"发生了错误" |
 
 ## 10. 审查时加查的项
 

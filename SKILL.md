@@ -1,9 +1,9 @@
 ---
 name: yizishi
-description: Writes, rewrites, and reviews user-facing UI copy in Chinese and English and removes AI tone (去 AI 味、更干练): buttons, empty states, errors, toasts, confirmations, status labels, tooltips, aria-labels, chat replies. Auto-picks an industry style (AI, SaaS, OS, mobile, finance, medical, education, government, industrial). Use whenever UI wording or backend messages shown in the UI (界面文案、提示语、报错、按钮文字) are written, audited, or shortened. Keeps test anchors intact.
+description: Writes, rewrites, and reviews user-facing UI copy in Chinese and English and removes AI tone (去 AI 味、更干练): buttons, empty states, errors, toasts, confirmations, status labels, tooltips, aria-labels, chat replies. Auto-picks an industry style (AI, SaaS, OS, mobile, finance, medical, education, government, industrial, e-commerce, gaming, automotive). Use whenever UI wording or backend messages shown in the UI (界面文案、提示语、报错、按钮文字) are written, audited, or shortened. Keeps test anchors intact.
 license: MIT
 metadata:
-  version: "1.0.1"
+  version: "1.1.0"
 ---
 
 # 界面文案
@@ -52,6 +52,9 @@ metadata:
 | `education` | 教育 | K12、高校、LMS、语言学习、考试 |
 | `government` | 政府 / 公共服务 | 政务服务、社保税务、公共事业 |
 | `industrial` | 工业 / 制造 / 能源 | HMI / SCADA、MES、IIoT、能源管理 |
+| `ecommerce` | 电商 / 零售 | 商品页、购物车、下单支付、售后、促销、直播带货 |
+| `gaming` | 游戏 | 手游、端游、主机游戏、抽卡与内购、防沉迷 |
+| `automotive` | 汽车 / 车机 | 智能座舱 HMI、辅助驾驶提示、OTA、充电、车主 App |
 
 加行业：照 `references/industries/_TEMPLATE.md` 写一份新文件，识别脚本会自动读到它的信号。
 
@@ -167,7 +170,7 @@ metadata:
 
 ## 验证这份技能本身
 
-- `python scripts/selftest.py`：36 条断言，覆盖三个脚本踩过的坑，全过退出码为 0。改了脚本必跑；它会在临时目录里建一个小 git 仓库，跑完自动删掉。
+- `python scripts/selftest.py`：41 条断言，覆盖三个脚本踩过的坑，全过退出码为 0。改了脚本必跑；它会在临时目录里建一个小 git 仓库，跑完自动删掉。
 - `evals/evals.json`：12 个场景，分回归题和留出题，怎么用写在它的 `notes` 里。往 examples.md 加例子时，别从留出题里取。
 
 ## 文件地图

@@ -253,6 +253,27 @@ def main() -> int:
               '<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>\n')
         _, out = run(sys.executable, os.path.join(HERE, "detect_industry.py"), "--json",
                      os.path.join(root, "f"))
+        write(root, "shop/package.json", '{"dependencies": {"@shopify/polaris": "^12", "react": "18"}}\n')
+        write(root, "shop/src/cart/Cart.tsx", 'export const a = "加入购物车"; export const b = "到手价";\n')
+        write(root, "car/app/build.gradle", "implementation 'androidx.car.app:app:1.4.0'\n")
+        write(root, "car/hmi/Alerts.kt", 'val a = "请接管"; val b = "续航"\n')
+        write(root, "game/Packages/manifest.json", '{"dependencies": {"com.unity.ugui": "1.0.0"}}\n')
+        write(root, "game/ProjectSettings/ProjectVersion.txt", "m_EditorVersion: 2022.3\n")
+        write(root, "game/gacha/Banner.cs", 'var a = "保底"; var b = "抽卡";\n')
+        write(root, "web/src/assets/logo.svg", "<svg/>\n")
+        write(root, "web/src/inventory/List.tsx", 'export const a = "库存";\n')
+        res = {r["industry"]: r for r in json.loads(
+            run(sys.executable, os.path.join(HERE, "detect_industry.py"), "--json",
+                os.path.join(root, "game"))[1])["industries"]}
+        check("detect_industry：com.unity.* 这种以 .* 结尾的通配按前缀匹配",
+              "com.unity.*" in res["gaming"]["deps"])
+        check("detect_industry：Unity 包 + ProjectSettings + gacha → gaming", top("game") == "gaming")
+        web = {r["industry"]: r["score"] for r in json.loads(
+            run(sys.executable, os.path.join(HERE, "detect_industry.py"), "--json",
+                os.path.join(root, "web"))[1])["industries"]}
+        check("detect_industry：前端常见的 assets、inventory 目录不给游戏加分", web["gaming"] == 0)
+        check("detect_industry：Shopify 依赖 + cart 目录 + 界面词 → ecommerce", top("shop") == "ecommerce")
+        check("detect_industry：androidx.car.app + hmi 目录 + 界面词 → automotive", top("car") == "automotive")
         mob = next(r for r in json.loads(out)["industries"] if r["industry"] == "mobile")
         check("detect_industry：缩进 YAML、XML 标签、点分权限名里的依赖都认得",
               {"permission_handler", "NSCameraUsageDescription", "ACCESS_FINE_LOCATION"} <= set(mob["deps"]))

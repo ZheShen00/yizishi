@@ -3,7 +3,7 @@
 放在项目里，建议路径 `docs/copy-glossary.md`，审文案之前先读。每个概念只留一个叫法。
 换叫法之前先查门禁有没有锚着它：裁决过的叫法，改名要先问用户，再连门禁一起改。
 
-行业：<ai / software / system / mobile / finance / medical / education / government / industrial，可写多个，用逗号隔开>
+行业：<ai / software / system / mobile / finance / medical / education / government / industrial / ecommerce / gaming / automotive，可写多个，用逗号隔开>
 
 | 用这个 | 不用这些 | 适用范围 | 来源 / 裁决 |
 |---|---|---|---|

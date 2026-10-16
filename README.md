@@ -72,7 +72,7 @@ cmd /c mklink /J "$env:USERPROFILE\.claude\skills\yizishi" "$env:USERPROFILE\.ag
 
 ## 行业风格
 
-银行要写清手续费和到账时间，医院要分清给医生看还是给病人看，工厂的报警要写原因、后果和处置。技能内置 9 个行业的风格文件，各含语气、术语、按元素的写法、合规硬约束、高风险场景和改前 → 改后：
+银行要写清手续费和到账时间，医院要分清给医生看还是给病人看，工厂的报警要写原因、后果和处置。技能内置 12 个行业的风格文件，各含语气、术语、按元素的写法、合规硬约束、高风险场景和改前 → 改后：
 
 | id | 行业 | 典型产品 |
 |---|---|---|
@@ -85,6 +85,9 @@ cmd /c mklink /J "$env:USERPROFILE\.claude\skills\yizishi" "$env:USERPROFILE\.ag
 | `education` | 教育 | K12、高校、LMS、语言学习、考试 |
 | `government` | 政府 / 公共服务 | 政务服务、社保税务、公共事业 |
 | `industrial` | 工业 / 制造 / 能源 | HMI / SCADA、MES、IIoT、能源管理 |
+| `ecommerce` | 电商 / 零售 | 商品页、购物车、下单支付、售后、促销、直播带货 |
+| `gaming` | 游戏 | 手游、端游、主机游戏、抽卡与内购、防沉迷 |
+| `automotive` | 汽车 / 车机 | 智能座舱 HMI、辅助驾驶提示、OTA、充电、车主 App |
 
 **怎么选**，先到先得：
 
@@ -123,7 +126,7 @@ checklist.md                  改完自查
 references/principles.md      通用写法、按元素写、去 AI 腔
 references/examples.md        真实的改前 → 改后和反例
 references/sources.md         出处
-references/industries/        9 个行业风格 + 模板
+references/industries/        12 个行业风格 + 模板
 references/locale-zh-hant.md  繁体（台湾 / 香港）用词和标点
 assets/glossary-template.md   项目术语表模板
 scripts/                      提取文案、查测试锚点、自测
@@ -154,7 +157,7 @@ What it adds beyond a generic "humanize this" prompt:
 - **Numbers checked against code**: limits, counts, and durations in the copy must match the values in code.
 - **Test-safe edits**: `scripts/check_copy_anchors.py` finds test and CI anchors that a copy change will break (BREAK), and negative assertions that will silently always pass (VACUOUS).
 - **Per-project conventions**: put your terms, ruled names, and fixed phrasings in `docs/copy-glossary.md`; the skill reads it first.
-- **Industry styles**: nine built-in style files (AI, SaaS / developer tools, OS / desktop, mobile apps, finance, healthcare, education, government, industrial) cover tone, terminology, per-element rules, compliance constraints, and high-risk scenarios. The skill picks one in this order: what you tell it, an `行业：<id>` line in your glossary, then `scripts/detect_industry.py`, which scores the repo by dependencies, directory names, and UI vocabulary. To add an industry, copy `references/industries/_TEMPLATE.md`; the detector reads the new file's signals with no code change.
+- **Industry styles**: twelve built-in style files (AI, SaaS / developer tools, OS / desktop, mobile apps, finance, healthcare, education, government, industrial, e-commerce, gaming, automotive) cover tone, terminology, per-element rules, compliance constraints, and high-risk scenarios. The skill picks one in this order: what you tell it, an `行业：<id>` line in your glossary, then `scripts/detect_industry.py`, which scores the repo by dependencies, directory names, and UI vocabulary. To add an industry, copy `references/industries/_TEMPLATE.md`; the detector reads the new file's signals with no code change.
 - **Traditional Chinese**: `references/locale-zh-hant.md` covers Taiwan and Hong Kong vocabulary and punctuation, and each industry file has a Taiwan / Hong Kong section on local regulations (for example, Taiwan's Personal Data Protection Act instead of mainland China's PIPL). The detector flags `zh-TW` / `zh-Hant` / `zh-HK` locale files.
 
 **Install**: put this directory in `~/.claude/skills/yizishi` (Claude Code) or `~/.agents/skills/yizishi` (Codex, DeepSeek Harness). To share one copy, clone it once and symlink it (on Windows, use a `mklink /J` junction). Python 3.8+ is required for the scripts.

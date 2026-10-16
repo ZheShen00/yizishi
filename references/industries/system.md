@@ -57,6 +57,7 @@
 | Apple 简体中文支持文档 | 可直接查证的真实简体中文系统文案用例：iPhone / iPad 用「轻点」，Mac 用「点按」（不用「点击」）；统一用「文件夹」 | <https://support.apple.com/zh-cn/guide/iphone/iph1a2a3a2c/ios>、<https://support.apple.com/zh-cn/guide/mac-help/mh35840/mac> |
 | Microsoft Windows apps – Dialog controls | 标题是主要指示，可省略，要短，并和按钮选项直接对应；正文不要换个说法重复标题；至少有一个安全、无破坏性的按钮（如 "Cancel"、"Close"），放在最右边，执行类按钮在左边；按钮文字用对正文问题的具体回答（如 "Allow" / "Block"），不用笼统的 OK | <https://learn.microsoft.com/en-us/windows/apps/develop/ui/controls/dialogs-and-flyouts/dialogs> |
 | Android Developers – Notifications | 通知标题要能在不看正文的情况下独立传达关键信息；正文给补充信息或下一步，避免把标题和正文写成同一句话的重复 | <https://developer.android.com/develop/ui/views/notifications> |
+| Material Design 3 – Content design | 谷歌跨 Android / ChromeOS / Web 的统一写作规范站点，页面标题明确写着「Write effective content」；该站为 JS 动态渲染，本次抓取只取到标题、没能取到正文具体条款，不逐句引用；系统软件如果用了 ChromeOS 或 Material 3 风格的桌面端 / PWA 控件，优先去这个站点核对最新措辞，而不是套用本文件里 Apple/Microsoft 那套写法 | <https://m3.material.io/foundations/content-design/overview>（未核实：站点标题已确认存在，具体条款原文本次未能取到） |
 
 ## 4. 术语和叫法
 
@@ -285,6 +286,7 @@ Windows / Linux 用加号连接的大写缩写：Ctrl+Shift+S；macOS 用符号�
 | Your device storage is full, maybe consider cleaning up~ | Storage is full. Free up space to continue installing. | 同上，英文版 |
 | 路径无效，请重新选择 | 无法安装到此驱动器：剩余空间只有 1.1 GB，至少需要 4 GB | 没说清楚「无效」具体指什么原因 |
 | Invalid path, please choose another | Can't install here: only 1.1 GB free, but 4 GB is required. | 同上，英文版 |
+| 检测到风险，是否继续运行？ | Windows protected your PC. Microsoft Defender SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk.（原文引用，真实 SmartScreen 弹窗文案，出处见第 3 节） | 「检测到风险」没说谁在拦截、因为什么拦截；真实文案点名拦截方（SmartScreen）、拦截动作（阻止未识别应用启动）、后果（可能带来风险），三件事缺一不可 |
 
 ## 10. 审查时加查的项
 

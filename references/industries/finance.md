@@ -41,9 +41,9 @@
 
 | 厂商 / 规范 | 风格要点（能落到句子上的） | 出处 |
 |---|---|---|
-| 支付宝 / 蚂蚁集团 | 统计类数字一律用阿拉伯数字，不用「二」「三」这类文字数字；大额或陌生账户转账提供「2 小时到账」「24 小时到账」的延迟到账选项，到账前可撤回 | <https://ant.design/docs/spec/copywriting-cn>；延迟到账：<https://zhuanlan.zhihu.com/p/43915263> |
+| 支付宝 / 蚂蚁集团 | 统计类数字一律用阿拉伯数字，不用「二」「三」这类文字数字（Ant Design 文案规范原文：「用户对于数字的感知速度更快，使用数字而非文字表述会更加有效」）；大额或陌生账户转账提供「2 小时到账」「24 小时到账」的延迟到账选项，到账前可撤回（延迟到账一条官方规范页未提及，仅见自媒体转述，未核实） | <https://ant.design/docs/spec/copywriting-cn>；延迟到账：<https://zhuanlan.zhihu.com/p/43915263>（未核实） |
 | 微信支付 | 对可疑收款账户设「转账冷静期」，常见窗口 15 分钟，到账前可撤回 | 澎湃新闻报道：<https://www.thepaper.cn/newsDetail_forward_25944478> |
-| 蚂蚁财富 | 当用户选择的产品风险等级高于其测评出的风险承受能力时，会以劝退 / 二次确认方式拦截购买，而非直接放行 | 支付宝官方微博口径，21 财经转述：<https://m.21jingji.com/article/20200314/herald/4754d02844d4c8498eb68256645ca1e1.html> |
+| 蚂蚁财富 | 当用户选择的产品风险等级高于其测评出的风险承受能力时，会以劝退 / 二次确认方式拦截购买，而非直接放行；原话「当不符合自己风险等级的时候，也会再三被提醒或是建议重新评测」「上个月，有 400 万人对超过自己风险承受能力的理财产品动心，被我劝退了！」 | 支付宝官方微博口径，21 财经转述：<https://m.21jingji.com/article/20200314/herald/4754d02844d4c8498eb68256645ca1e1.html> |
 | 招商银行 / 中国银行等商业银行理财销售文件 | 理财产品风险揭示书固定以「理财非存款、产品有风险、投资须谨慎」开篇，并要求「认真阅读相关产品合同…充分了解投资风险」 | 中国银行风险揭示范本：<https://www.bankofchina.com/custserv/cs8/cs83/200811/P020111230543583898460.pdf> |
 | 国家金融监督管理总局《银行保险机构消费者权益保护管理办法》 | 信息披露要用「通俗易懂的语言」，关键信息要「以显著方式」披露，贷款类产品「应当明示年化利率」，不得默认勾选个人信息授权 | 国务院公报全文：<https://www.gov.cn/gongbao/content/2023/content_5753317.htm>（具体条号见第 6 节） |
 | 中国证监会《证券期货投资者适当性管理办法》 | 确立「卖者尽责、买者自负」原则，要求销售机构做风险测评并按等级匹配产品，这是蚂蚁财富 / 天天基金「超出风险承受能力」提示的制度依据 | 证监会令第 130 号，2017 年 7 月 1 日起施行：<https://www.csrc.gov.cn/csrc/c101950/c1048083/content.shtml> |
@@ -51,10 +51,11 @@
 | Intuit（TurboTax / QuickBooks） | 公开的内容设计原则：「像对朋友说话」，句子控制在约 20 词以内，出错时主动承担、用主动语态而非被动句回避责任 | <https://contentdesign.intuit.com/style-and-usage/our-principles/> |
 | 美国 CFPB（消费者金融保护局）/ Regulation Z | APR（年化利率）和 finance charge 的数值披露必须「比其他任何披露都更醒目」；必须使用「annual percentage rate」这一术语本身，并配一句通俗说明，如「the cost of your credit as a yearly rate」 | 12 CFR §1026.17(a)(2)：<https://www.law.cornell.edu/cfr/text/12/1026.17>；§1026.18(d)(e)：<https://www.law.cornell.edu/cfr/text/12/1026.18> |
 | 美国 SEC《A Plain English Handbook》 | 招股书 / 基金说明书类文件要求短句、主动语态、具体的日常词汇、避免法律行话和多重否定 | <https://www.sec.gov/pdf/handbook.pdf> |
-| 英国 FCA 手册 COBS 4.6.2R（过往业绩展示） | 展示过往业绩时必须带醒目警示：这些数字是过去的，「past performance is not a reliable indicator of future results」；业绩要按完整的 12 个月区间展示 | <https://handbook.fca.org.uk/handbook/cobs4/cobs4s6> |
-| 英国 FCA《Consumer Duty》 | 四项结果之一是「consumer understanding」（PRIN 2A.5）：沟通要满足零售客户的信息需求、能被他们理解，让他们做出「effective, timely and properly informed」的决定，并且「clear, fair and not misleading」 | <https://www.fca.org.uk/firms/consumer-duty>；条文：<https://handbook.fca.org.uk/handbook/PRIN/2A/5.html> |
+| 英国 FCA 手册 COBS 4.6.2R（过往业绩展示） | 展示过往业绩时必须带醒目警示：这些数字是过去的，「past performance is not a reliable indicator of future results」；业绩数据不能比整页里其他必要信息更突出（must not be given more prominence than other information necessary for a balanced view）；要按过去五年、完整的 12 个月区间展示，并写明区间和数据来源 | <https://handbook.fca.org.uk/handbook/cobs4/cobs4s6> |
+| 英国 FCA《Consumer Duty》 | 四项结果之一是「consumer understanding」（PRIN 2A.5）：沟通要满足零售客户的信息需求、能被他们理解，让他们做出「effective, timely and properly informed」的决定，并且「clear, fair and not misleading」；配套指引还要求避免堆砌免责声明（avoid excessive disclaimers），并按客户的弱势特征调整沟通方式（tailor communications based on vulnerability factors） | <https://www.fca.org.uk/firms/consumer-duty>；条文：<https://handbook.fca.org.uk/handbook/PRIN/2A/5.html> |
 | 美国 CFPB「Know Before You Owe」房贷披露改版 | 用多轮真实用户测试取代单纯的文字规则：改版后的表格让用户「比用旧表格时答对更多关于样例房贷的问题」，验证了精简术语、去掉重叠信息确实提升了理解 | <https://www.consumerfinance.gov/know-before-you-owe/> |
-| Wise（英国汇款 / 多币种账户） | 设计系统里有公开的「Tone of voice」页，二手介绍称其强调直白、简洁、少用行话；页面为 JS 渲染，本次没取到正文 | <https://wise.design/foundations/tone-of-voice>（正文要点未核实） |
+| 中国人民银行《金融消费者权益保护实施办法》（中国人民银行令〔2020〕第 5 号，2020 年 9 月 15 日发布，2020 年 11 月 1 日起施行，同时废止银办发〔2013〕107 号、银发〔2016〕314 号两份旧文件） | 第十七条：信息披露要「使用有利于金融消费者接收、理解的方式」，利率、费用、收益、风险等重要信息要「根据金融产品或者服务的复杂程度及风险等级，对其中关键的专业术语进行解释说明」，并「以适当方式供金融消费者确认其已接收完整信息」——这是独立于金融监管总局《银行保险机构消费者权益保护管理办法》的另一份规定，发布机关是中国人民银行，不要把两者当成同一份文件引用 | <https://www.gov.cn/gongbao/content/2020/content_5567753.htm> |
+| 八部门《金融产品网络营销管理办法》（公告〔2026〕第 9 号，2026 年 4 月 21 日发布，2026 年 9 月 30 日起施行，现行有效） | 明确列出禁止使用的诱导性用语：「低风险」「低门槛」「秒到账」「高收益」「低利率」「无成本」；不得明示或暗示「保本、承诺收益、限定损失」；保险类营销不得「夸大保险责任或进行不当类比」；营销内容的产品名称、费率、风险提示必须与合同条款一致；用户进入购买环节前要「显著提醒并设置强制阅读时间」（具体条号网络转述为第九条或第十条，说法不一，引用前请核对官方原文确认条号） | 新华社：<https://www.news.cn/politics/20260424/615d283daaf54ceeb6f2a0c6a4f33b4c/c.html>；人民日报：<https://paper.people.com.cn/rmrb/pc/content/202604/25/content_30153028.html>；金杜律师事务所解读：<https://www.kingandwood.com/cn/zh/insights/latest-thinking/china-regulates-online-marketing-of-financial-products-by-implementing-new-measures.html> |
 
 ## 4. 术语和叫法
 
@@ -143,6 +144,7 @@ EN: "A $5,000.00 charge posted to your account ending in 1234." — not "Somethi
 **不许出现的话**：
 
 - 第二十三条：「不得进行欺诈、隐瞒或者误导性的宣传，不得作夸大产品收益或者服务权益、掩饰产品风险等虚假或者引人误解的宣传。」——据此，「保本」「稳赚」「无风险」「100% 安全」「保证收益」「跑赢大盘」这类词不能出现在任何投资 / 理财产品的营销或引导文案里。
+- 八部门《金融产品网络营销管理办法》（公告〔2026〕第 9 号，2026 年 9 月 30 日起施行）进一步列出具体禁用诱导词：「低风险」「低门槛」「秒到账」「高收益」「低利率」「无成本」，以及任何暗示「保本、承诺收益、限定损失」的表述；保险类营销不得「夸大保险责任或进行不当类比」（具体条号网络转述不一，引用前请核对官方原文确认是第几条）。
 - 第二十八条：不得「从贷款本金中预先扣除利息」，不得「以向第三方支付咨询费、佣金等名义变相向消费者额外收费」——费用展示要是最终会扣的全部费用，不能把实际费率藏进「咨询费」这类名目。
 - 第四十四条：「银行保险机构通过线上渠道使用格式条款获取个人信息授权的，不得设置默认同意的选项。」——个人信息授权、隐私协议、营销短信订阅的复选框一律默认不勾选。
 - 第四十一条：催收不得「冒用行政机关、司法机关等名义」，不得「采取暴力、恐吓、欺诈等不正当手段」。逾期提醒文案不能伪装成法院 / 公安通知的语气来制造恐慌。
@@ -268,6 +270,7 @@ EN: "Expense report pending (2 of 3 approvals): Approved by department manager, 
 | 你的账户出问题了，联系客服 | 账户已冻结，暂不能转账或支付。如需解冻，请联系客服或前往网点办理。<br>EN: Something's wrong with your account. Contact support. → Your account is frozen. Transfers and payments are unavailable. To unfreeze it, contact support or visit a branch. | 没说清楚发生了什么、没给下一步 |
 | 您的卡号是 6222021234567890 | 储蓄卡 622202\*\*\*\*\*\*7890<br>EN: Your card number is 6222021234567890 → Debit card ending in 7890 | 完整卡号未脱敏，不符合 JR/T 0171—2020 的屏蔽展示要求 |
 | 这个产品超适合你，买它！ | 该产品风险等级（R4）高于您的风险测评等级（C2），继续购买即表示您已知悉并自愿承担超出承受能力的风险。<br>EN: This is perfect for you — buy it! → This product's risk level (R4) is higher than your risk tolerance (C2). Continuing means you accept the risk beyond your tolerance. | 跳过适当性匹配，诱导购买超出承受能力的产品 |
+| 直接放行购买，不做风险匹配拦截 | 当不符合自己风险等级的时候，会再三提醒或建议重新评测（蚂蚁财富官方微博口径：「上个月，有 400 万人对超过自己风险承受能力的理财产品动心，被我劝退了！」） | 跳过风险测评拦截，用户事后才发现买的产品超出自己能承受的风险 |
 | 转账成功 | 已提交，24 小时后到账，到账前可在「转账记录」中撤回。如对方自称公检法人员要求转账，请先拨打 96110 核实。<br>EN: Transfer successful → Submitted. Arrives in 24 hours and can be recalled before then. If someone claiming to be police or a prosecutor asked you to send this, verify first. | 把「已提交」说成「成功」，且缺反诈提示和撤回说明 |
 | 退款申请已提交 | 退款申请已提交，预计 1–3 个工作日原路退回，可在「退款记录」中查看进度。<br>EN: Refund request submitted → Refund requested. Expect it back on your original payment method in 1–3 business days — track it under "Refund history." | 没说退款去向和时间，用户不知道接下来要等多久 |
 | 理赔未通过 | 理赔未通过：提交的诊断证明不符合条款约定的责任范围，可在 30 日内申诉，申诉入口见下方。<br>EN: Claim denied → Claim denied: the diagnosis provided doesn't fall within the covered conditions in your policy. You can appeal within 30 days — see the link below. | 没说拒赔依据和申诉方式 |

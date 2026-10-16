@@ -49,20 +49,21 @@
 
 | 厂商 / 规范 | 风格要点（能落到句子上的） | 出处 |
 |---|---|---|
-| NHS 数字服务手册 | 医学词换成大白话优先，常见词有固定替换（acute → sudden / starts suddenly，abdomen → tummy），目标阅读年龄 9–11 岁；数字书写用阿拉伯数字，剂量范围写法如 "250mg to 500mg" | <https://service-manual.nhs.uk/content/a-to-z-of-nhs-health-writing>、<https://service-manual.nhs.uk/content/numbers-measurements-dates-time> |
+| NHS 数字服务手册 | 医学词换成大白话优先，常见替换：acute → sudden / starts suddenly，abdomen → tummy，anus → bottom，chronic → for a long time / does not go away，haemorrhage → a very heavy bleed，nausea → feeling sick，vomiting → being sick，renal → kidney，risk → chance；阳性 / 阴性结果写成 "test did find / did not find what it was looking for"；目标阅读年龄 9–11 岁；数字书写用阿拉伯数字，剂量范围写法如 "250mg to 500mg"（数字和单位间不加空格），并建议避免两个数字相邻出现，如 "The usual dose is one or two 200mg tablets 3 times a day" | <https://service-manual.nhs.uk/content/a-to-z-of-nhs-health-writing>、<https://service-manual.nhs.uk/content/numbers-measurements-dates-time> |
 | Mayo Clinic 患者教育政策 | 目标阅读水平 6–8 年级；语气「对话式但权威且有同理心」（conversational yet authoritative and compassionate）；内容由医生 + 患者教育专家联合审核 | <https://www.mayoclinic.org/about-this-site/health-education-policy> |
-| CDC Clear Communication Index | 20 点清单，包含「主旨和行动号召」「数字和风险」等维度，用于自查健康传播材料是否清楚 | <https://www.cdc.gov/ccindex/pdf/clear-communication-user-guide.pdf> |
+| CDC Clear Communication Index | 20 点清单，「主旨和行动号召」维度的具体条目示例：「材料是否包含一条主旨陈述（main message statement）」「主旨是否放在材料的最前面」；和 `principles.md`「关键信息放前面」方向一致，但该清单把它变成可逐条勾选的硬性自查项 | <https://www.cdc.gov/ccindex/pdf/clear-communication-user-guide.pdf> |
 | AHRQ 健康素养工具包（Health Literacy Universal Precautions Toolkit） | 目标阅读水平 4–6 年级，默认假设患者是低健康素养人群；专业词换常用词（abdomen → "stomach or belly"） | <https://www.ahrq.gov/sites/default/files/publications2/files/health-literacy-toolkit-third-edition.pdf> |
 | ISMP 易混淆缩写清单（Error-Prone Abbreviations List） | 给出处方、医嘱里绝对禁止使用的缩写和书写方式，逐条说明会被误读成什么、正确写法是什么 | <https://www.ismp.org/system/files/resources/2021-02/Error%20Prone%20Abbreviations%202021_0.pdf> |
 | IEC 60601-1-8（医用电气设备报警系统通用要求） | 报警分三级：高 / 中 / 低优先级，按「不处理会不会在短时间内导致死亡或不可逆损伤」来定级，声音节奏和视觉样式按级区分（标准正文需购买，以下为二手解读，条款号未核实） | <https://www.sameskydevices.com/blog/a-guide-to-iec-60601-1-8-and-medical-alarm-systems> |
 | FDA 人因工程指南 / IEC 62366-1 | 说明书、标签、屏显信息都属于「用户界面」的一部分，人因验证测试必须用最终版文案，不能用占位文字 | <https://www.fda.gov/media/163694/download> |
-| Apple Health（心律不齐通知功能） | 非诊断类健康功能的免责语范式："not intended to diagnose...not intended to replace traditional methods of diagnosis or treatment"，并提醒该功能不是持续监测 | <https://support.apple.com/en-us/120276> |
+| Apple ECG App（Instructions for Use） | 非诊断类健康功能的免责语范式，原文：「The ECG waveform is meant to supplement rhythm classification for the purposes of discriminating AFib from sinus rhythm and is not intended to replace traditional methods of diagnosis or treatment.」以及「DO NOT use to diagnose heart-related conditions.」（此前版本误将该引文归于心律不齐通知 IRN 功能页，已核实并更正来源为 ECG App 说明书） | <https://www.apple.com/legal/ifu/ecg/ecg-ifu-2-en_US.pdf> |
 | Epic MyChart（以 Cambridge Health Alliance 部署文案为例） | 消息类功能明确告知不适用于紧急情况："MyChart should not be used for urgent situations...dial 911 if it is an emergency"（具体文案因医院自定义而异，仅此部署已核实，不代表 Epic 官方统一文案） | <https://cha.harvard.edu/mychart/mychart-faq> |
 | 国家药监局《医疗器械说明书和标签管理规定》 | 第十四条列出说明书 / 标签禁用语清单（见第 6 节），是国内医疗文案最硬的合规底线 | <http://www.gov.cn/gongbao/content/2014/content_2765482.htm> |
 | 国家卫健委《病历书写基本规范》 | 诊断名称必须用中文全称、不能自造缩写；病情分级只有「病危 / 病重 / 一般」三档固定词 | <https://www.nhc.gov.cn/yzygj/c100068/201002/766b58f0dd9242d3b62276e5c88d27dc.shtml> |
-| 丁香医生（App 内免责声明，二手转述，未逐字核实原始页面） | 问诊类回答的免责表述范式：「不能代替医生面诊和医院诊断」，并提示由此产生的后果用户自行负责 | 来自公开检索摘录，原始页面文本建议上线前自行截图核实 |
+| 丁香医生被监管部门责令整改案例 | 杭州、银川等地卫健委曾责令「丁香医生」整改，其修改用户协议、增加条款，说明在线问诊咨询服务「仅针对曾在实体医疗机构诊疗过的部分常见病、慢性病的复诊患者」——直接印证第 6 节「互联网诊疗只服务复诊患者」的监管口径 | 人民日报客户端转载：<https://www.peopleapp.com/article/7133723/6982384> |
 | 《互联网诊疗监管细则（试行）》（国家卫健委办公厅、国家中医药局办公室，国卫办医发〔2022〕2号，2022 年 2 月 8 日印发） | 互联网诊疗只服务常见病 / 慢性病复诊患者，不得对首诊患者开展互联网诊疗活动（第十六条）；处方须由接诊医师本人开具、严禁使用人工智能等自动生成处方（第二十一条），直接决定挂号 / 问诊入口的分流文案 | <https://www.nhc.gov.cn/yzygj/c100068/202203/2072f0e8988249e59d942e1b2a933916.shtml> |
 | 《个人信息保护法》第二十八 / 二十九条 | 医疗健康信息属于敏感个人信息，处理前要单独同意；界面上敏感信息授权不能和通用《用户协议》打包勾选 | <https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm> |
+| FDA 唯一器械标识（UDI）系统 | 器械标签需同时提供人类可读的纯文本（plain-text）和机读码（AIDC）两种形式的 UDI；标签和包装上所有日期一律写成 YYYY-MM-DD 格式 | 21 CFR 801.30、801.40(d)、801.45(d)；<https://www.fda.gov/medical-devices/unique-device-identification-system-udi-system/udi-basics> |
 
 ## 4. 术语和叫法
 
@@ -191,7 +192,7 @@
 
 - 数字用阿拉伯数字，单位用法定计量单位：重量用 g / mg / μg（或写全「微克」）/ ng，容量用 L / mL，国际单位用「国际单位」、单位用「单位」全写，不用符号缩写。
 - 数字和单位之间留一个空格（10 mg，不写 10mg）：防止单位被误读成数字的一部分，这是 ISMP 的安全书写建议，优先级高于一般中英文数字排版习惯。
-- 不满 1 的数值必须补前导 0：0.5 mg，不写成 .5 mg；末尾不写多余的 0：1 mg，不写 1.0 mg。
+- 不满 1 的数值必须补前导 0：0.5 mg，不写成 .5 mg；末尾不写多余的 0：1 mg，不写 1.0 mg。真实事故案例（案例转述自药学媒体，未取得 ISMP 一手链接，未核实）：医嘱写成「Haldol .5 mg」被误读执行成 5 mg（漏前导 0，10 倍剂量差错）；写成「Coumadin 1.0 mg」被误读执行成 10 mg（多余尾 0，10 倍剂量差错）。
 - 频次用中文全称：每日 1 次、每日 3 次、隔日 1 次、每晚 1 次，不用 qd / tid / qod / qn 这类拉丁缩写。
 - 依据 ISMP 易混淆缩写清单，以下缩写在医嘱、处方、用药提醒里禁止使用：
 
@@ -213,7 +214,11 @@
 
 **敏感个人信息同意**：医疗健康信息属于《个人信息保护法》第二十八条列明的敏感个人信息，处理前须取得个人的单独同意（第二十九条，条号为 PIPL 通用知识，建议上线前核对官方原文）。界面上采集病历、过敏史、基因、生育信息等的授权，必须是独立的勾选项或独立弹窗，不能和注册时的《用户协议》打包一次性勾选。
 
-**处方药线上销售**：依据《药品网络销售监督管理办法》（国家市场监督管理总局令第 58 号，2022 年 12 月 1 日起施行）第九条，每个处方药展示页面下要突出显示「处方药须凭处方在药师指导下购买和使用」等风险警示信息；通过处方审核前，不得展示说明书等信息，不得提供处方药购买的相关服务；处方药销售主页面、首页面不得直接公开展示处方药包装、标签等信息。全文：<https://www.gov.cn/gongbao/content/2022/content_5717002.htm>
+**处方药线上销售**：依据《药品网络销售监督管理办法》（国家市场监督管理总局令第 58 号，2022 年 12 月 1 日起施行）第九条，每个处方药展示页面下要突出显示「处方药须凭处方在药师指导下购买和使用」等风险警示信息；通过处方审核前，不得展示说明书等信息，不得提供处方药购买的相关服务；处方药销售主页面、首页面不得直接公开展示处方药包装、标签等信息。全文：<https://www.gov.cn/gongbao/content/2022/content_5717002.htm> 该办法本身截至 2026 年未修订，仍为现行版本。
+
+**处方药网络零售合规指南（2026）**：国家药监局 2026 年 5 月发布《处方药网络零售合规指南》作为细化指引（仅核实文件存在和发布时间，具体条款内容未核实，上线前请查阅原文）。
+
+**医疗器械网络销售监管动向（草案，尚未生效）**：《医疗器械网络销售监督管理办法（修订草案征求意见稿）》已于 2026 年 7 月 27 日公开征求意见（截止 2026 年 8 月 26 日），目前仍是草案、尚未生效，不能当成现行强制要求引用。拟新增要点：注册证 / 说明书标注「仅限医疗机构使用」的器械不得网售给消费者；产品页须突出显示购买使用注意事项；经营资质信息须在「显著位置、清晰易辨识」展示；记录留存期限统一为五年。正式稿发布后需回来更新本节。来源：<https://www.anjielaw.com/view/article-info.html?id=3966>
 
 **互联网诊疗范围**：依据《互联网诊疗监管细则（试行）》（国家卫健委办公厅、国家中医药局办公室，国卫办医发〔2022〕2号，2022 年 2 月 8 日印发：<https://www.nhc.gov.cn/yzygj/c100068/202203/2072f0e8988249e59d942e1b2a933916.shtml>）第十六条，互联网诊疗只能服务常见病、慢性病的复诊患者，不得对首诊患者开展互联网诊疗活动；第十八条要求医疗机构明确终止条件，患者病情变化、本次就诊经医师判断为首诊或存在其他不适宜互联网诊疗的情况时，接诊医师应当立即终止互联网诊疗活动并引导患者到实体医疗机构就诊。界面上挂号 / 问诊入口要能区分初诊与复诊，对初诊患者在流程早期就给出「请到实体医疗机构就诊」的引导，而不是走完全程才告知不支持。第二十一条规定处方应由接诊医师本人开具，严禁使用人工智能等自动生成处方，严禁在处方开具前向患者提供药品；「AI 辅助开方」类功能界面上，最终提交动作必须明确是医师签发，不能把「系统生成」包装成「已开具」。
 
@@ -279,6 +284,7 @@
 | 暂无检验报告（实际是加载失败） | 检验报告加载失败，请重试；多次失败请联系客服 | 把失败状态显示成空状态，让患者误以为自己没做过检查 |
 | 本产品治愈率高达 98% | （删除该说法；如需引用临床数据须注明出处，不在界面文案里直接写治愈率 / 有效率数字） | 违反《医疗器械说明书和标签管理规定》第十四条、《医疗广告管理办法》第七条 |
 | AI 智能确诊，秒出结果 | 智能问诊助手帮您梳理症状，结果仅供参考，由医生最终确认 | 暗示 AI 具有诊断效力，违反「不能代替医生诊断」的要求 |
+| 本功能可检测房颤，已为您诊断 | 此功能仅用于辅助区分房颤与窦性心律，不能代替传统的诊断或治疗方式，请勿用它诊断心脏相关疾病。（译自 Apple ECG App 说明书原文："The ECG waveform is meant to supplement rhythm classification for the purposes of discriminating AFib from sinus rhythm and is not intended to replace traditional methods of diagnosis or treatment." "DO NOT use to diagnose heart-related conditions."） | 把辅助判断功能包装成确定诊断，掩盖了设备本身的能力边界 |
 | 您有新消息（内容其实是血糖异常提醒，锁屏可见） | 您有一条健康提醒，点击查看详情 | 锁屏通知不能直接暴露诊断 / 检验数值等敏感医疗信息 |
 | 确定吗？（停用降压药提醒的确认框） | 停用「氨氯地平 5 mg 每日 1 次」后，今天起不再提醒服药。 | 确认框没说明停的是什么、对后续治疗计划的影响 |
 | 胸闷气短的话，看看是不是没休息好（对疑似心梗症状的问诊回复） | 您填写的症状可能提示紧急情况，请立即拨打 120 或前往最近的急诊科。 | 把可能危及生命的症状常态化，没有触发紧急升级 |
