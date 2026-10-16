@@ -6,11 +6,12 @@
   python extract_ui_strings.py --attrs <文件或目录>...   # 只列 aria-label / title / placeholder / alt
     （`title={条件 ? "A" : "B"}` 两句都列；`title={变量}` 标 DYNAMIC，要去定义处看）
 
-- .ts / .tsx / .js / .jsx / .mjs / .cjs / .vue：按词法去掉注释，逐行打印含中文的代码行
-  （字符串字面量和 JSX 文本都在里面）；
+- .ts / .tsx / .js / .jsx / .mjs / .cjs / .vue / .svelte / .html：按词法去掉注释（含 <!-- -->），
+  逐行打印含中文的代码行（字符串字面量和 JSX 文本都在里面）；
 - .py：用 AST 列出字符串字面量（f-string 的插值位写成 {…}），跳过 docstring，
   并标出所在函数或常量名 —— 方便区分「显示给用户的句子」和「写给模型的提示词」；
-- 目录递归展开（跳过 node_modules / .next / dist / build / __pycache__ / .git）。
+- 目录递归展开（跳过 node_modules / .next / dist / build / __pycache__ / .git）；
+  文件按 UTF-8（可带 BOM）读，读不了再按 GB18030；Python 语法错的文件跳过并在 stderr 说一声。
 
 默认标出的写法（--flags 只看其中几类，例如 --flags DASH,STAR）：
   DASH    破折号「——」当连接词（短文案一律不用）
@@ -38,27 +39,78 @@ FLAGS = {
     "QUERY": re.compile(r"确认不了|改没改|看一眼"),
     "JARGON": re.compile(r"产物|改盘|版本链|快照|锚点|线程|盘上|落上|回落|注册名|沙箱|引擎|留痕|白名单|端点|字节"),
 }
-TS_EXT = {".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".vue"}
+TS_EXT = {".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".vue", ".svelte", ".html"}
+#: 带 HTML 模板的文件：<!-- --> 也是注释
+HTML_EXT = {".vue", ".svelte", ".html", ".htm", ".xml"}
 
 #: 单独成串的「—」：空值占位，不是连接词（`?? "—"`、`'—'`、Python 里整串就是「—」）。
-_LONE_DASH = re.compile(r"""(["'`])\s*[—–-]\s*\1""")
+#: 引号里两边带空格的 `" — "` 是拿来拼句子的连接词，不算占位、要标。
+_LONE_DASH = re.compile(r"""(["'`])[—–-]\1""")
 
 
 def _dash_text(text: str) -> str:
     """判 DASH 之前先去掉空值占位的「—」，别把表格缺省值当成破折号连接词。"""
-    if text.strip() in {"—", "–", "-"}:
+    if text in {"—", "–", "-"}:
         return ""
     return _LONE_DASH.sub("", text)
 SKIP_DIRS = {"node_modules", ".next", "dist", "build", "__pycache__", ".git", ".venv", "venv"}
 
 
+def read_source(path: str) -> str:
+    """UTF-8（可带 BOM）优先；Windows 上的老文件常是 GBK，再按 GB18030 读。别因为一个文件中断整个目录。"""
+    with open(path, "rb") as fh:
+        raw = fh.read()
+    for enc in ("utf-8-sig", "gb18030"):
+        try:
+            return raw.decode(enc)
+        except UnicodeDecodeError:
+            pass
+    return raw.decode("utf-8", "replace")
+
+
+def strip_html_comments(src: str) -> str:
+    """去掉 <!-- --> 注释，换行保留（行号不变）。"""
+    return re.sub(r"<!--.*?-->", lambda m: "\n" * m.group(0).count("\n"), src, flags=re.S)
+
+
+#: 「/」前面是这些字符或关键字时是正则字面量的开头；跟在值（标识符、数字、`)`、`]`）后面是除号。
+#: 不含「<」：JSX 的结束标签 `</p>` 不是正则。
+_REGEX_PREV = set("(,=:[!&|?{};+-*%>~^")
+_REGEX_KW = {"return", "typeof", "case", "do", "else", "in", "of", "void", "yield", "await",
+             "delete", "throw", "new"}
+
+
+def _regex_allowed(out: list) -> bool:
+    j = len(out) - 1
+    while j >= 0 and out[j] in " \t\n":
+        j -= 1
+    if j < 0 or out[j] in _REGEX_PREV:
+        return True
+    k = j
+    while k >= 0 and (out[k].isalnum() or out[k] in "_$"):
+        k -= 1
+    return k < j and "".join(out[k + 1:j + 1]) in _REGEX_KW
+
+
 def strip_ts_comments(src: str) -> str:
-    """按词法去掉 // 与 /* */ 注释，字符串（含模板字符串）原样保留，换行保留。"""
-    out, i, n, state, quote = [], 0, len(src), "code", ""
+    """按词法去掉 // 与 /* */ 注释，字符串（含模板字符串）和正则字面量原样保留，换行保留。
+
+    正则里的 `/*`（如 `/\\/*$/`）、JSX 文本里网址的 `//`（`https://x.com`）都不是注释。
+    """
+    out, i, n, state, quote, in_class = [], 0, len(src), "code", "", False
     while i < n:
         c = src[i]
         d = src[i + 1] if i + 1 < n else ""
         if state == "code":
+            if c == "/" and d == "/" and i >= 2 and src[i - 1] == ":" and src[i - 2].isalpha():
+                out.append(c)  # 网址里的 scheme://
+                i += 1
+                continue
+            if c == "/" and d not in ("/", "*") and _regex_allowed(out):
+                state, in_class = "regex", False
+                out.append(c)
+                i += 1
+                continue
             if c == "/" and d == "/":
                 state = "line"
                 i += 2
@@ -78,6 +130,18 @@ def strip_ts_comments(src: str) -> str:
                 continue
             if c == quote or (c == "\n" and quote != "`"):
                 state = "code"
+        elif state == "regex":
+            out.append(c)
+            if c == "\\" and d not in ("", "\n"):
+                out.append(d)
+                i += 2
+                continue
+            if c == "[":
+                in_class = True
+            elif c == "]":
+                in_class = False
+            elif (c == "/" and not in_class) or c == "\n":
+                state = "code"
         elif state == "line":
             if c == "\n":
                 out.append(c)
@@ -93,9 +157,16 @@ def strip_ts_comments(src: str) -> str:
     return "".join(out)
 
 
+def ts_source(path: str) -> str:
+    """去掉注释后的源码：模板里的 <!-- --> 和脚本里的 // /* */ 都去掉，行号不变。"""
+    src = read_source(path).replace("\r", "")
+    if os.path.splitext(path)[1].lower() in HTML_EXT:
+        src = strip_html_comments(src)
+    return strip_ts_comments(src)
+
+
 def ts_rows(path: str):
-    src = open(path, encoding="utf-8").read().replace("\r", "")
-    for no, line in enumerate(strip_ts_comments(src).split("\n"), 1):
+    for no, line in enumerate(ts_source(path).split("\n"), 1):
         yield no, "", line.strip()
 
 
@@ -148,7 +219,7 @@ def attr_rows(path: str, minimum: int = 1):
     - 表达式里一个中文字面量都没有（`title={m.hint}`、`title={t("key")}`）：标 DYNAMIC。
       文字在别处定义，要去定义处看，别当成「这个控件没有文字」。
     """
-    src = strip_ts_comments(open(path, encoding="utf-8").read().replace("\r", ""))
+    src = ts_source(path)
     for m in _ATTR_START.finditer(src):
         no = src.count("\n", 0, m.start()) + 1
         attr, i = m.group(1), m.end()
@@ -169,8 +240,12 @@ def attr_rows(path: str, minimum: int = 1):
 
 
 def py_rows(path: str):
-    src = open(path, encoding="utf-8").read()
-    tree = ast.parse(src)
+    src = read_source(path)
+    try:
+        tree = ast.parse(src)
+    except (SyntaxError, ValueError) as e:
+        print(f"跳过（Python 语法错误，第 {getattr(e, 'lineno', '?')} 行）：{path}", file=sys.stderr)
+        return
     docs = set()
     for node in ast.walk(tree):
         if isinstance(node, (ast.Module, ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
@@ -227,20 +302,33 @@ def main(argv):
     minimum, only_flagged, wanted, attrs = 1, False, set(FLAGS), False
     files = []
     it = iter(argv)
+
+    def usage(msg):
+        print(f"{msg}\n\n{__doc__}", file=sys.stderr)
+        return 2
+
     for a in it:
-        if a == "--min-cjk":
-            minimum = int(next(it))
+        if a in ("--min-cjk", "--flags"):
+            value = next(it, None)
+            if value is None:
+                return usage(f"{a} 后面要跟一个值")
+            if a == "--min-cjk":
+                if not value.isdigit():
+                    return usage(f"--min-cjk 要一个整数，收到的是 {value}")
+                minimum = int(value)
+            else:
+                wanted = {x.strip().upper() for x in value.split(",") if x.strip()}
+                unknown = wanted - set(FLAGS)
+                if unknown:
+                    return usage(f"没有这几类：{', '.join(sorted(unknown))}。可选：{', '.join(FLAGS)}")
         elif a == "--only-flagged":
             only_flagged = True
-        elif a == "--flags":
-            wanted = {x.strip().upper() for x in next(it).split(",") if x.strip()}
         elif a == "--attrs":
             attrs = True
         else:
             files.append(a)
     if not files:
-        print(__doc__)
-        return 2
+        return usage("要给文件或目录")
     if attrs:
         for path in expand(files):
             if os.path.splitext(path)[1] not in TS_EXT:

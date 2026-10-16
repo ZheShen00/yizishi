@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1 (2026-10-16)
+
+改名为 yizishi（一字师）。修了代码审查找出的脚本漏洞，自测从 21 条加到 36 条。
+
+- `check_copy_anchors.py`：中文文件名不再被跳过；`git mv` 改名的文件按旧路径取改前内容；也查 `.strings`、`.xml`、`.po`、`.arb`、`.properties`、`.svelte`、`.html` 等资源文件；`.vue` 的 `<!-- -->` 注释先去掉；改到一半、语法错的 `.py` 不再让脚本崩溃
+- `extract_ui_strings.py`：正则字面量里的 `/*`、JSX 文本里网址的 `//` 不再被当成注释；带 BOM 或 GBK 编码的文件能读，语法错的 `.py` 跳过而不中断整个目录；`" — "` 这种拼句子的破折号会标 DASH；`--flags` 写错名字、参数缺值时给用法提示
+- `detect_industry.py`：缩进的 YAML、XML 标签里、点分的 Android 权限名里的依赖都能认出
+
 ## 1.0.0 (2026-10-16)
 
 首次公开发布。

@@ -33,10 +33,13 @@ import tokenize
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from extract_ui_strings import strip_ts_comments  # noqa: E402
+from extract_ui_strings import HTML_EXT, read_source, strip_html_comments, strip_ts_comments  # noqa: E402
 
 CJK = re.compile(r"[一-鿿]")
-PRODUCT_EXT = {".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".vue", ".py", ".json", ".yaml", ".yml"}
+SCRIPT_EXT = {".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".vue", ".svelte"}
+#: 界面文案常住的地方：代码、配置，以及 Android / iOS / gettext / Flutter / Java 的资源文件
+PRODUCT_EXT = SCRIPT_EXT | {".py", ".json", ".yaml", ".yml", ".html", ".htm", ".xml", ".strings",
+                            ".po", ".arb", ".properties", ".resx", ".wxml"}
 DEFAULT_TEST_GLOBS = [
     "*/tests/*", "tests/*", "*/__tests__/*", "*.test.*", "*.spec.*", "*/test_*.py", "test_*.py",
     "*_test.py", "smoke/*", "e2e/*", "*/e2e/*", ".context/*.cjs",
@@ -85,7 +88,8 @@ def strip_test_comments(path: str, src: str) -> str:
 
 
 def git(root, *args, check=True):
-    out = subprocess.run(["git", "-C", root, *args], capture_output=True)
+    # core.quotePath=false：中文路径原样输出，不然会变成带引号的 "\346\226\207…" 被当成别的扩展名
+    out = subprocess.run(["git", "-C", root, "-c", "core.quotePath=false", *args], capture_output=True)
     if check and out.returncode != 0:
         raise SystemExit(out.stderr.decode("utf-8", "replace"))
     return out.stdout.decode("utf-8", "replace")
@@ -101,11 +105,14 @@ def py_strings(src: str) -> str:
     try:
         tree = ast.parse(src)
     except SyntaxError:
-        # 解析不了就退一步：去掉注释 token，整份留着
+        # 解析不了（改到一半的文件）就退一步：去掉注释 token，整份留着；连 token 都切不开就只去整行注释
         out = []
-        for tok in tokenize.generate_tokens(io.StringIO(src).readline):
-            if tok.type != tokenize.COMMENT:
-                out.append(tok.string)
+        try:
+            for tok in tokenize.generate_tokens(io.StringIO(src).readline):
+                if tok.type != tokenize.COMMENT:
+                    out.append(tok.string)
+        except (tokenize.TokenError, SyntaxError):
+            return "\n".join(ln for ln in src.split("\n") if not ln.lstrip().startswith("#"))
         return " ".join(out)
     docs = set()
     for node in ast.walk(tree):
@@ -128,8 +135,12 @@ def product_text(path: str, src: str) -> str:
     src = src.replace("\r\n", "\n")
     if ext == ".py":
         return py_strings(src)
-    if ext in {".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".vue"}:
+    if ext in HTML_EXT:
+        src = strip_html_comments(src)
+    if ext in SCRIPT_EXT or ext in {".html", ".htm", ".strings"}:
         return strip_ts_comments(src)
+    if ext in {".po", ".properties"}:
+        return "\n".join(ln for ln in src.split("\n") if not ln.lstrip().startswith(("#", "!")))
     return src
 
 
@@ -137,26 +148,39 @@ def read(root, path):
     full = os.path.join(root, path)
     if not os.path.isfile(full):
         return None
-    with open(full, encoding="utf-8", errors="replace") as fh:
-        return fh.read()
+    return read_source(full)
 
 
 def main(argv):
     root, base, globs = ".", "HEAD", list(DEFAULT_TEST_GLOBS)
     it = iter(argv)
     for a in it:
-        if a == "--root":
-            root = next(it)
-        elif a == "--base":
-            base = next(it)
-        elif a == "--test-glob":
-            globs.append(next(it))
+        if a in ("--root", "--base", "--test-glob"):
+            value = next(it, None)
+            if value is None:
+                print(f"{a} 后面要跟一个值\n\n{__doc__}", file=sys.stderr)
+                return 2
+            if a == "--root":
+                root = value
+            elif a == "--base":
+                base = value
+            else:
+                globs.append(value)
         elif a in ("-h", "--help"):
             print(__doc__)
             return 0
     root = git(root, "rev-parse", "--show-toplevel").strip()
 
-    changed = [p for p in git(root, "diff", "--name-only", base).splitlines() if p]
+    # 改名（git mv）的文件，改前的内容要按旧路径取
+    old_path: dict[str, str] = {}
+    changed = []
+    for line in git(root, "diff", "--name-status", "-M", base).splitlines():
+        parts = line.split("\t")
+        if len(parts) == 3 and parts[0].startswith(("R", "C")):
+            old_path[parts[2]] = parts[1]
+            changed.append(parts[2])
+        elif len(parts) == 2:
+            changed.append(parts[1])
     changed += [p for p in git(root, "ls-files", "--others", "--exclude-standard").splitlines() if p]
     product_changed = [p for p in changed if not is_test(p, globs) and os.path.splitext(p)[1] in PRODUCT_EXT]
     if not product_changed:
@@ -165,7 +189,7 @@ def main(argv):
 
     pre, post = [], []
     for p in product_changed:
-        old = git(root, "show", f"{base}:{p}", check=False)
+        old = git(root, "show", f"{base}:{old_path.get(p, p)}", check=False)
         new = read(root, p) or ""
         pre.append(product_text(p, old))
         post.append(product_text(p, new))

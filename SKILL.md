@@ -3,7 +3,7 @@ name: yizishi
 description: Writes, rewrites, and reviews user-facing UI copy in Chinese and English and removes AI tone (去 AI 味、更干练): buttons, empty states, errors, toasts, confirmations, status labels, tooltips, aria-labels, chat replies. Auto-picks an industry style (AI, SaaS, OS, mobile, finance, medical, education, government, industrial). Use whenever UI wording or backend messages shown in the UI (界面文案、提示语、报错、按钮文字) are written, audited, or shortened. Keeps test anchors intact.
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # 界面文案
@@ -167,7 +167,7 @@ metadata:
 
 ## 验证这份技能本身
 
-- `python scripts/selftest.py`：21 条断言，覆盖三个脚本踩过的坑，全过退出码为 0。改了脚本必跑；它会在临时目录里建一个小 git 仓库，跑完自动删掉。
+- `python scripts/selftest.py`：36 条断言，覆盖三个脚本踩过的坑，全过退出码为 0。改了脚本必跑；它会在临时目录里建一个小 git 仓库，跑完自动删掉。
 - `evals/evals.json`：12 个场景，分回归题和留出题，怎么用写在它的 `notes` 里。往 examples.md 加例子时，别从留出题里取。
 
 ## 文件地图
