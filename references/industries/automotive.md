@@ -173,6 +173,8 @@ Android for Cars 的做法是明确区分行车中（driving）和驻车（parke
 
 ## 7. 高风险场景
 
+> 示例里的数字、时效和承诺（「25 分钟」「自动回滚」「近 7 日最低价」这类）是示意，只示范要素和句式。改真实文案时以产品给的事实为准，没有就写 [填：…]（见 SKILL.md 踩过的坑 7）。
+
 - **接管请求（辅助驾驶退出）**：要素——明确指令词「请接管」、简短原因、不响应会发生什么。不能用「系统即将退出」这类只描述系统行为、不直接告诉驾驶员该做什么的句子。
   中：「请立即接管。车道保持即将退出，已检测到前方施工区域。」
   英：`Take over now. Lane keeping is disengaging — construction zone ahead.`
@@ -185,7 +187,7 @@ Android for Cars 的做法是明确区分行车中（driving）和驻车（parke
 - **自动泊车启动确认**：要素——车辆周边是否已确认安全、泊车过程中驾驶员是否需要留在车内、能否中途取消。
   中：「开始自动泊车。请确认车辆周围无人员和障碍物，泊车过程中请留在驾驶位，随时可按刹车取消。」
   英：`Start automatic parking. Confirm the area around the vehicle is clear. Stay in the driver's seat — press the brake anytime to cancel.`
-- **OTA 升级期间车辆不可用**：要素——预计时长、升级期间车辆能否行驶 / 充电 / 解锁、升级失败的后备方案。不能等用户升级到一半才发现车门打不开。
+- **OTA 升级期间车辆不可用**：要素——预计时长、升级期间车辆能否行驶 / 充电 / 解锁、升级失败后怎么处理（自动回滚、停在原版本还是要联系售后，按产品实际写，不知道就写 [填：升级失败后的处理方式]）。不能等用户升级到一半才发现车门打不开。
   中：「本次升级预计需要 25 分钟，期间车辆无法启动，车门可正常解锁。升级失败将自动回滚到当前版本。」
   英：`This update takes about 25 minutes. The vehicle can't be started during this time, but doors can still be unlocked. If the update fails, it will automatically roll back to the current version.`
 - **低电量 / 续航预警**：要素——当前电量或续航数值、附近可用充电资源（如适用）、预警是否会升级为功能受限。分级参照 `industrial.md` 的预警 / 报警分层原则：预警是提前提醒，到达更低阈值要升级为更强提示。
@@ -232,6 +234,8 @@ Android for Cars 的做法是明确区分行车中（driving）和驻车（parke
 | 数字钥匙分享权限说明含糊 | 「已把车钥匙分享给张三啦」 | 「已向张三分享数字钥匙，可开车门和启动车辆，有效期至 10 月 20 日，可随时收回。」——说清权限范围和有效期 |
 
 ## 9. 改前 → 改后
+
+> 示例里的数字、时效和承诺（「25 分钟」「自动回滚」「近 7 日最低价」这类）是示意，只示范要素和句式。改真实文案时以产品给的事实为准，没有就写 [填：…]（见 SKILL.md 踩过的坑 7）。
 
 | 改前 | 改后 | 问题 |
 |---|---|---|

@@ -165,12 +165,14 @@ EN: "A $5,000.00 charge posted to your account ending in 1234." — not "Somethi
 
 ## 7. 高风险场景
 
+> 示例里的数字、时效和承诺（「25 分钟」「自动回滚」「近 7 日最低价」这类）是示意，只示范要素和句式。改真实文案时以产品给的事实为准，没有就写 [填：…]（见 SKILL.md 踩过的坑 7）。
+
 **转账 / 支付确认**：必写收款人（姓名 + 机构 / 账户后四位）、金额、到账时间、手续费、能否撤回。
 中：「向张三（工商银行 \*\*\*\* 1234）转账 ¥1,280.00，预计实时到账，手续费 ¥0，发起后无法撤回。」
 EN: "Send $1,280.00 to John Smith (Chase •••• 1234). Arrives instantly. Fee: $0.00. This can't be undone once sent."
 
 **支付 / 转账失败**：给分类原因 + 对症下一步，不编造模糊到没用的理由，也不泄露风控阈值。
-中：「银行卡余额不足，请更换支付方式或充值后重试。」「单笔金额超过当日限额（¥50,000），请分笔转账或联系银行提升限额。」风控拦截时可以说「因安全原因暂时无法完成，请稍后重试或联系客服」，但不能编造一个假的具体原因。
+中：「银行卡余额不足，请更换付款方式或存入资金后重试。」（钱包余额不足才写「充值」，见第 4 节）「单笔金额超过当日限额（¥50,000），请分笔转账或联系银行提升限额。」风控拦截时可以说「因安全原因暂时无法完成，请稍后重试或联系客服」，但不能编造一个假的具体原因。
 EN: "Your card has insufficient funds. Add funds or use a different payment method."
 
 **风险提示 / 理财与基金销售**：购买前二次确认页必须出现风险提示和业绩免责声明，不能被营销话术挤掉。
@@ -260,10 +262,12 @@ EN: "Expense report pending (2 of 3 approvals): Approved by department manager, 
 
 ## 9. 改前 → 改后
 
+> 示例里的数字、时效和承诺（「25 分钟」「自动回滚」「近 7 日最低价」这类）是示意，只示范要素和句式。改真实文案时以产品给的事实为准，没有就写 [填：…]（见 SKILL.md 踩过的坑 7）。
+
 | 改前 | 改后 | 问题 |
 |---|---|---|
 | 确定要转账吗？ | 向张三（工商银行 \*\*\*\* 1234）转账 ¥1,280.00，预计实时到账，手续费 ¥0，发起后无法撤回。<br>EN: Are you sure? → Send $1,280.00 to John Smith (Chase •••• 1234). Arrives instantly. Fee: $0.00. This can't be undone once sent. | 确认框缺收款人、金额、到账时间、手续费、能否撤回 |
-| 支付失败，请重试 | 银行卡余额不足，请更换支付方式或充值后重试。<br>EN: Payment failed. Please try again. → Your card has insufficient funds. Add funds or use a different payment method. | 重试解决不了的错误没给对症的下一步 |
+| 支付失败，请重试 | 银行卡余额不足，请更换付款方式或存入资金后重试。<br>EN: Payment failed. Please try again. → Your card has insufficient funds. Add funds or use a different payment method. | 重试解决不了的错误没给对症的下一步 |
 | 本产品收益稳定，欢迎抢购！ | 理财非存款，产品有风险，投资须谨慎。本产品不保本，历史业绩不代表未来表现。<br>EN: Guaranteed steady returns — buy now! → This investment can lose value. Past performance is not a reliable indicator of future results. | 「收益稳定」「抢购」属于禁用的夸大 / 诱导性宣传，且缺风险提示 |
 | 亲，您的专属验证码是 123456，快来试试新功能吧～ | 验证码：123456，5 分钟内有效，请勿告诉任何人，如非本人操作请忽略。<br>EN: Hey! Your special code is 123456 — check out our new feature! → Your code is 123456. Valid for 5 minutes. Don't share it with anyone. | 验证码短信夹带营销 + 卖萌语气 |
 | 日息低至 0.02%，马上借！ | 日利率 0.02%，折合年化利率 7.3%（单利），以实际放款为准。<br>EN: As low as 0.02% daily — borrow now! → 0.02% daily, equivalent to 7.3% APR (simple interest). Final rate subject to approval. | 只展示日利率，掩盖真实年化成本，违反「贷款类产品应当明示年化利率」 |
