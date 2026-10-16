@@ -1,5 +1,5 @@
 ---
-name: zh-ui-copy
+name: yizishi
 description: Writes, rewrites, and reviews user-facing UI copy in Chinese and English and removes AI tone (去 AI 味、更干练): buttons, empty states, errors, toasts, confirmations, status labels, tooltips, aria-labels, chat replies. Auto-picks an industry style (AI, SaaS, OS, mobile, finance, medical, education, government, industrial). Use whenever UI wording or backend messages shown in the UI (界面文案、提示语、报错、按钮文字) are written, audited, or shortened. Keeps test anchors intact.
 license: MIT
 metadata:

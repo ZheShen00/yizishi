@@ -1,4 +1,4 @@
 interface:
-  display_name: "/zh-ui-copy"
+  display_name: "/yizishi"
   short_description: "写、改、审界面文案：短、准、能照着做，改完不弄坏测试。"
-  default_prompt: "Use $zh-ui-copy to review and tighten the user-facing copy in these files."
+  default_prompt: "Use $yizishi to review and tighten the user-facing copy in these files."

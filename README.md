@@ -1,6 +1,8 @@
-# zh-ui-copy
+# 一字师 yizishi
 
 [繁體中文](README.zh-Hant.md) · [English](#english)
+
+> 齐己写《早梅》「前村深雪里，昨夜数枝开」，郑谷改「数枝」为「一枝」，齐己拜他为「一字师」。界面文案也是这样：改得少，改得准。
 
 一个给 AI 编程助手用的界面文案技能（[Agent Skill](https://agentskills.io)）：写、改、审前端文案，去掉 AI 腔，并且改完不弄坏测试。
 
@@ -33,23 +35,23 @@
 
 | 工具 | 用户级目录 | 项目级目录 |
 |---|---|---|
-| Claude Code | `~/.claude/skills/zh-ui-copy` | `.claude/skills/zh-ui-copy` |
-| OpenAI Codex | `~/.agents/skills/zh-ui-copy` | `.agents/skills/zh-ui-copy` |
-| DeepSeek Harness | `~/.agents/skills/zh-ui-copy` 或 `~/.dsh/skills/zh-ui-copy` | `.agents/skills/zh-ui-copy` 或 `.dsh/skills/zh-ui-copy` |
+| Claude Code | `~/.claude/skills/yizishi` | `.claude/skills/yizishi` |
+| OpenAI Codex | `~/.agents/skills/yizishi` | `.agents/skills/yizishi` |
+| DeepSeek Harness | `~/.agents/skills/yizishi` 或 `~/.dsh/skills/yizishi` | `.agents/skills/yizishi` 或 `.dsh/skills/yizishi` |
 
 三个工具都用的话，克隆一份，再链接过去：
 
 ```bash
 # macOS / Linux
-git clone https://github.com/ZheShen00/zh-ui-copy ~/.agents/skills/zh-ui-copy
-mkdir -p ~/.claude/skills && ln -s ~/.agents/skills/zh-ui-copy ~/.claude/skills/zh-ui-copy
+git clone https://github.com/ZheShen00/yizishi ~/.agents/skills/yizishi
+mkdir -p ~/.claude/skills && ln -s ~/.agents/skills/yizishi ~/.claude/skills/yizishi
 ```
 
 ```powershell
 # Windows（目录联接，不需要管理员权限）
-git clone https://github.com/ZheShen00/zh-ui-copy "$env:USERPROFILE\.agents\skills\zh-ui-copy"
+git clone https://github.com/ZheShen00/yizishi "$env:USERPROFILE\.agents\skills\yizishi"
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null
-cmd /c mklink /J "$env:USERPROFILE\.claude\skills\zh-ui-copy" "$env:USERPROFILE\.agents\skills\zh-ui-copy"
+cmd /c mklink /J "$env:USERPROFILE\.claude\skills\yizishi" "$env:USERPROFILE\.agents\skills\yizishi"
 ```
 
 不要再往 `~/.codex/skills` 放一份副本，否则 Codex 会加载两次。
@@ -58,9 +60,9 @@ cmd /c mklink /J "$env:USERPROFILE\.claude\skills\zh-ui-copy" "$env:USERPROFILE\
 
 ## 使用
 
-- Claude Code：`/zh-ui-copy`，或者直接说「把这页文案去下 AI 味」
-- Codex：`$zh-ui-copy`，或在 `/skills` 里选
-- DeepSeek Harness：`/zh-ui-copy`，或直接描述需求
+- Claude Code：`/yizishi`，或者直接说「把这页文案去下 AI 味」
+- Codex：`$yizishi`，或在 `/skills` 里选
+- DeepSeek Harness：`/yizishi`，或直接描述需求
 
 三种活：
 
@@ -141,7 +143,7 @@ agents/openai.yaml            Codex 的显示信息
 
 ## English
 
-**zh-ui-copy** is an [Agent Skill](https://agentskills.io) for writing, rewriting, and reviewing user-facing UI copy (buttons, placeholders, empty states, errors, toasts, confirmations, status labels, tooltips, aria-labels, chat-panel replies) and removing AI tone, without breaking your tests.
+**yizishi** (一字师, "the one-character teacher": a Tang-dynasty poet who fixed a poem by changing a single word) is an [Agent Skill](https://agentskills.io) for writing, rewriting, and reviewing user-facing UI copy (buttons, placeholders, empty states, errors, toasts, confirmations, status labels, tooltips, aria-labels, chat-panel replies) and removing AI tone, without breaking your tests.
 
 It works with Claude Code, OpenAI Codex, DeepSeek Harness, and other tools that support the Agent Skills format. The rules are written in Chinese and tuned for Chinese interfaces, but they apply to English copy as well.
 
@@ -155,8 +157,8 @@ What it adds beyond a generic "humanize this" prompt:
 - **Industry styles**: nine built-in style files (AI, SaaS / developer tools, OS / desktop, mobile apps, finance, healthcare, education, government, industrial) cover tone, terminology, per-element rules, compliance constraints, and high-risk scenarios. The skill picks one in this order: what you tell it, an `行业：<id>` line in your glossary, then `scripts/detect_industry.py`, which scores the repo by dependencies, directory names, and UI vocabulary. To add an industry, copy `references/industries/_TEMPLATE.md`; the detector reads the new file's signals with no code change.
 - **Traditional Chinese**: `references/locale-zh-hant.md` covers Taiwan and Hong Kong vocabulary and punctuation, and each industry file has a Taiwan / Hong Kong section on local regulations (for example, Taiwan's Personal Data Protection Act instead of mainland China's PIPL). The detector flags `zh-TW` / `zh-Hant` / `zh-HK` locale files.
 
-**Install**: put this directory in `~/.claude/skills/zh-ui-copy` (Claude Code) or `~/.agents/skills/zh-ui-copy` (Codex, DeepSeek Harness). To share one copy, clone it once and symlink it (on Windows, use a `mklink /J` junction). Python 3.8+ is required for the scripts.
+**Install**: put this directory in `~/.claude/skills/yizishi` (Claude Code) or `~/.agents/skills/yizishi` (Codex, DeepSeek Harness). To share one copy, clone it once and symlink it (on Windows, use a `mklink /J` junction). Python 3.8+ is required for the scripts.
 
-**Use**: `/zh-ui-copy` in Claude Code, `$zh-ui-copy` in Codex, or just ask to review or tighten the copy in a file.
+**Use**: `/yizishi` in Claude Code, `$yizishi` in Codex, or just ask to review or tighten the copy in a file.
 
 License: [MIT](LICENSE)

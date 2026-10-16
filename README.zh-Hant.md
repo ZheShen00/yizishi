@@ -1,6 +1,8 @@
-# zh-ui-copy
+# 一字師 yizishi
 
 [简体中文](README.md) · [English](README.md#english)
+
+> 齊己寫〈早梅〉「前村深雪裡，昨夜數枝開」，鄭谷改「數枝」為「一枝」，齊己拜他為「一字師」。介面文案也是這樣：改得少，改得準。
 
 給 AI 程式助理用的介面文案技能（[Agent Skill](https://agentskills.io)）：寫、改、審前端文案，去掉 AI 腔，而且改完不會弄壞測試。
 
@@ -64,23 +66,23 @@
 
 | 工具 | 使用者層級目錄 | 專案層級目錄 |
 |---|---|---|
-| Claude Code | `~/.claude/skills/zh-ui-copy` | `.claude/skills/zh-ui-copy` |
-| OpenAI Codex | `~/.agents/skills/zh-ui-copy` | `.agents/skills/zh-ui-copy` |
-| DeepSeek Harness | `~/.agents/skills/zh-ui-copy` 或 `~/.dsh/skills/zh-ui-copy` | `.agents/skills/zh-ui-copy` 或 `.dsh/skills/zh-ui-copy` |
+| Claude Code | `~/.claude/skills/yizishi` | `.claude/skills/yizishi` |
+| OpenAI Codex | `~/.agents/skills/yizishi` | `.agents/skills/yizishi` |
+| DeepSeek Harness | `~/.agents/skills/yizishi` 或 `~/.dsh/skills/yizishi` | `.agents/skills/yizishi` 或 `.dsh/skills/yizishi` |
 
 三個工具都用的話，複製一份，再連結過去：
 
 ```bash
 # macOS / Linux
-git clone https://github.com/ZheShen00/zh-ui-copy ~/.agents/skills/zh-ui-copy
-mkdir -p ~/.claude/skills && ln -s ~/.agents/skills/zh-ui-copy ~/.claude/skills/zh-ui-copy
+git clone https://github.com/ZheShen00/yizishi ~/.agents/skills/yizishi
+mkdir -p ~/.claude/skills && ln -s ~/.agents/skills/yizishi ~/.claude/skills/yizishi
 ```
 
 ```powershell
 # Windows（目錄連接，不需要系統管理員權限）
-git clone https://github.com/ZheShen00/zh-ui-copy "$env:USERPROFILE\.agents\skills\zh-ui-copy"
+git clone https://github.com/ZheShen00/yizishi "$env:USERPROFILE\.agents\skills\yizishi"
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null
-cmd /c mklink /J "$env:USERPROFILE\.claude\skills\zh-ui-copy" "$env:USERPROFILE\.agents\skills\zh-ui-copy"
+cmd /c mklink /J "$env:USERPROFILE\.claude\skills\yizishi" "$env:USERPROFILE\.agents\skills\yizishi"
 ```
 
 不要再往 `~/.codex/skills` 放一份副本，否則 Codex 會載入兩次。
@@ -89,9 +91,9 @@ cmd /c mklink /J "$env:USERPROFILE\.claude\skills\zh-ui-copy" "$env:USERPROFILE\
 
 ## 使用
 
-- Claude Code：`/zh-ui-copy`，或直接說「把這頁文案去一下 AI 味」
-- Codex：`$zh-ui-copy`，或在 `/skills` 裡選
-- DeepSeek Harness：`/zh-ui-copy`，或直接描述需求
+- Claude Code：`/yizishi`，或直接說「把這頁文案去一下 AI 味」
+- Codex：`$yizishi`，或在 `/skills` 裡選
+- DeepSeek Harness：`/yizishi`，或直接描述需求
 
 三種工作：
 
