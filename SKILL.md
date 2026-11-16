@@ -3,7 +3,7 @@ name: yizishi
 description: Writes, rewrites, and reviews user-facing UI copy in Chinese and English and removes AI tone (去 AI 味、更干练): buttons, empty states, errors, toasts, confirmations, status labels, tooltips, aria-labels, chat replies. Auto-picks an industry style (AI, SaaS, OS, mobile, finance, medical, education, government, industrial, e-commerce, gaming, automotive). Use whenever UI wording or backend messages shown in the UI (界面文案、提示语、报错、按钮文字) are written, audited, or shortened. Keeps test anchors intact.
 license: MIT
 metadata:
-  version: "1.1.2"
+  version: "1.1.3"
 ---
 
 # 界面文案
@@ -25,7 +25,7 @@ metadata:
 | 用户要的 | 做法 | 交付 |
 |---|---|---|
 | 审（只查不改） | 走下面「审」的清单 | 问题清单：类别、原文（引用 + 文件位置）、几个字的改法。不改写、不打分、不猜是不是 AI 写的，审完问要不要改 |
-| 改 | 走「改」的清单 | 改前 → 改后（典型几条）、改了多少处（字数前后）、新增事实及出处、刻意没改的及原因、验证结果 |
+| 改 | 走「改」的清单 | 改前 → 改后（典型几条）、改了多少处（字数前后）、新增事实及出处、刻意没改的及原因、标「猜的」的几处、验证结果 |
 | 写 | 先定行业风格、查「项目约定」，再按 `references/principles.md` 落笔 | 文案本身；有同类句子时和它们对齐 |
 
 **自由度**：措辞是判断活，拿不准就看 `references/examples.md`。改代码是低自由度的活，按清单顺序来，批量替换用脚本，不手改。
@@ -153,6 +153,7 @@ metadata:
 6. **模型写的字显示在纯文本面上时，在读数据的那一处统一去掉 `**`**：静态检查看不见运行时的文本。
 7. **不替产品编事实**：改后新增的每个事实（数字、时效、价格依据、会不会回滚 / 留存 / 含税 / 能否撤回）都要能在原稿、代码或用户给的材料里找到。找不到就写 [填：…]，再列进「需要确认」。行业文件里的示例只示范要素和句式，里面的数字和承诺是示意，不搬进改稿。
 8. **改措辞不改功能**：按钮改完还触发同一个动作，提示改完还对应同一个状态。觉得功能本身该改（比如购买前先测评），写进「需要确认」，文案不动。
+9. **「不经 AI」「按规则计算」也是讲机制**：这类话读着像在让用户放心，实际是在解释系统怎么算，照样删。改稿时最容易被当成「有用的安心话」留下，审的时候要专门找：`…Rule`、`…Hint`、`…Note` 这类说明文案逐条过。用户拿来做判断的门槛和范围（「互动率 ≥ 5% 算高」「0–1，越高越好」）留下，算法过程（怎么加权、怎么排名、按什么时长算）删掉。
 
 ## 改代码时的坑（查锚）
 

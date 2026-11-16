@@ -103,3 +103,10 @@
 - no-ai-slop 2026-08 后的规则（可移植性测试、解读型元话语、重要性吹捧、模糊归因）：https://github.com/petergyang/no-ai-slop/blob/main/skills/no-ai-slop/SKILL.md
 - shuorenhua v2.5（按作用判断而不按词表命中、保住责任主体和下一步、改不准就撤销）：https://github.com/MrGeDiao/shuorenhua
 - speak-human-tw（38 种痕迹、台湾在地化用语、保护清单）：https://github.com/Raymondhou0917/speak-human-tw
+
+## 2026-11 对照上游
+
+- humbleteam/ux-writing 1.9.0–1.12.0：确认框的「能不能撤回」不知道就留占位，不替产品断言；能撤回的删除用带撤销的 toast，不弹确认框；自查要把一个流程里的元素放在一起看；只复述标签的悬停提示删字救不了，要补控件做什么，或者判断这处不需要提示；开场白（「以下是…：」）单列一种写法
+- shuorenhua v2.6.0：「别吹」只降表示程度的夸饰、删空口号，带内容的强说法（承诺、可核查的声明、数字）保留。v2.7.0：挑一种读法改的标「猜的」，交给作者决定
+- speak-human-tw 2026-11-09：浮夸最高级（史诗级、天花板、降维打击）；空洞程度副词不机械换成「非常」；台湾用语加代码、爆款、对标
+- no-ai-slop、stop-slop、humanizer、renhua、quaiwei-skill、vale-ai-tells：2026-10-10 以后没有规则改动
