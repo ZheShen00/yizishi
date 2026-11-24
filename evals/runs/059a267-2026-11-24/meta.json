@@ -1,0 +1,31 @@
+{
+  "run": "059a267-2026-11-24",
+  "date": "2026-11-24",
+  "model": {
+    "name": "deepseek-flash",
+    "pinned": false,
+    "note": "跑在 DSH harness 里，拿不到精确模型版本号；PROTOCOL 第 2 节要求钉死版本，这条不满足"
+  },
+  "judge": {
+    "model": "deepseek-flash（与被测同源）",
+    "blind": true,
+    "note": "盲编有效，但 judge 与被测同一模型，PROTOCOL 第 5 节要求不同模型，这条不满足"
+  },
+  "injection": {
+    "method": "experiment-A-approx",
+    "note": "带技能那组读 SKILL.md，按它自己的指示再按需读 references/；带 harness 框架"
+  },
+  "isolation": "每组一个干净上下文子代理，分 8 个一批并发",
+  "counts": {
+    "answers": 42,
+    "verdicts": 42,
+    "missing": 0
+  },
+  "working_tree_dirty": true,
+  "evals_json_sha256": "f934788397bd4c78fed4c835c0dee86ff5471858eff50feb5d84c9e26ee6abf7",
+  "evals_json_cases": 21,
+  "provenance_note": "跑的时候 evals.json 还是未提交状态（21 条题），ancestor_commit 里只有 12 条题。这个目录随 1.1.4 一起提交，所以「含这 21 条题的提交」就是 1.1.4 那个提交（提交无法记自己的 hash）。核对题集请用 evals_json_sha256。",
+  "ancestor_commit": "059a267",
+  "commit": null,
+  "released_in": "1.1.4"
+}

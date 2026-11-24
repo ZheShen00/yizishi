@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"①问题+检查网络后重试，多次失败稍后再试"},{"index":2,"verdict":1,"why":"②未写请重试，列明支持格式及另存步骤"},{"index":3,"verdict":1,"why":"③写清联系管理员或申请编辑权限"},{"index":4,"verdict":1,"why":"③无请稍后重试类空等话术"},{"index":5,"verdict":1,"why":"三句均无时长、状态码、接口名"},{"index":6,"verdict":1,"why":"三句均为问题+具体下一步"}]}

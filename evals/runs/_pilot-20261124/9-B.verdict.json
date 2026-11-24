@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"明写跑了脚本并给出输出"},{"index":2,"verdict":1,"why":"两处会断位置均点名"},{"index":3,"verdict":1,"why":"点明该断言改后永远通过"},{"index":4,"verdict":1,"why":"给出 toBe 空串断言，否定只换片段"},{"index":5,"verdict":1,"why":"点出注释含词会让门禁假绿"}]}

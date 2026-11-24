@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"明写跑了该脚本并给出输出"},{"index":2,"verdict":1,"why":"分BREAK与VACUOUS两类"},{"index":3,"verdict":1,"why":"明说改后永远通过"},{"index":4,"verdict":0,"why":"未提脚本查不到的门禁与探针"},{"index":5,"verdict":1,"why":"给出toBe(\"\"精确值写法"}]}

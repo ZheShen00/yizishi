@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"点名字节是内部计量，改按 MB/GB"},{"index":2,"verdict":1,"why":"点快照是内部叫法并给替换"},{"index":3,"verdict":1,"why":"点沙箱用户看不见，换测试空间"},{"index":4,"verdict":1,"why":"点引擎是内部组件名并给改法"},{"index":5,"verdict":1,"why":"点留痕是内部说法，换操作记录"},{"index":6,"verdict":1,"why":"点回落等内部词，整句讲机制"},{"index":7,"verdict":1,"why":"逐条列问题，未整段重写六句"}]}

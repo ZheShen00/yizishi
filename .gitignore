@@ -4,3 +4,5 @@ __pycache__/
 .gstack/
 HANDOFF.md
 HANDOFF-*.md
+
+evals/runs/_dryrun/

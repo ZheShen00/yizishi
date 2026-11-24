@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"明确指出用户会误读为已完成、去正文找不到"},{"index":2,"verdict":0,"why":"未列出固定状态词集合，也未提门禁锚定"},{"index":3,"verdict":1,"why":"保留状态词加tooltip让用户自行核对正文"}]}

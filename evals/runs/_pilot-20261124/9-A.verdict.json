@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":0,"why":"自述未真跑测试或门禁"},{"index":2,"verdict":1,"why":"列出两处会断的位置"},{"index":3,"verdict":1,"why":"指出反向断言改后假绿"},{"index":4,"verdict":1,"why":"给出 toBe(\"\") 精确断言"},{"index":5,"verdict":1,"why":"点出注释含该词会假绿"}]}

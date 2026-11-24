@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""建评测 5 和评测 9 要用的小仓库：python build_repos.py <目录>
+"""建评测 5、9、15 要用的小仓库：python build_repos.py <目录>
 
-建出 <目录>/e5 和 <目录>/e9，各是一个 git 仓库：一个基线提交，外加一处还没提交的文案改动。
+建出 <目录>/e5、<目录>/e9、<目录>/e15，各是一个 git 仓库。e5 和 e9 另有一处还没提交的文案改动；
+e15 工作区是干净的，只用来考「技能会不会先读项目术语表 docs/copy-glossary.md」。
 评测只读，跑完删掉目录即可。目录已经存在就报错退出，不覆盖。需要 git。
 """
 from __future__ import annotations
@@ -76,6 +77,38 @@ REPOS = {
         },
         "change": ("src/banner.ts", "仍在同步，关闭页面会中断同步", "同步中，请勿关闭页面"),
     },
+    # 评测 15（留出题）：项目术语表定的叫法和技能默认值相反。
+    # 陷阱是「会话」和「材料」——按技能默认规则该改成「对话」「文件」，但项目术语表禁止。
+    # 真问题只有三处：历史版本→历史记录、两处「你」→「您」。
+    "e15": {
+        "files": {
+            "docs/copy-glossary.md": ("\n", [
+                "# 界面术语表",
+                "",
+                "行业：software",
+                "",
+                "| 用这个 | 不用这些 | 适用范围 | 来源 / 裁决 |",
+                "|---|---|---|---|",
+                "| 材料 | 文件、附件、文档 | 全站 | 用户裁决：本产品的「材料」指用户上传的原始附件，不要改成「文件」 |",
+                "| 会话 | 对话、线程、thread | 全站 | 用户裁决：本产品按「会话」计数，不要改成「对话」 |",
+                "| 历史记录 | 历史版本、版本链 | 全站 | 用户裁决；门禁锚着「历史记录」 |",
+                "| 您 | 你 | 全站 | 项目约定 |",
+                "| 待填 | 要你补、待你补全 | 草稿空位 | 项目约定 |",
+            ]),
+            "src/panel.tsx": ("\n", [
+                "// 面板上的文案，渲染在纯文本面上",
+                'export const EMPTY = "这个会话里还没有材料，请先上传。";',
+                'export const CONFIRM_DELETE = "删除后无法恢复，确定要删除这份材料吗？";',
+                "export const staleNote = (edited: boolean) =>",
+                '  edited ? "改动还没生效，你可以在历史版本里找回上一版。" : "";',
+            ]),
+            "src/upload.tsx": ("\n", [
+                "// 上传入口的提示",
+                'export const HINT = "你要是想看上传的原始内容，去材料详情页。";',
+                'export const LIMIT = "单次最多上传 20 份材料，超过的部分请分批上传。";',
+            ]),
+        },
+    },
 }
 
 
@@ -99,6 +132,9 @@ def build(root: str) -> None:
         git(repo, "config", "core.autocrlf", "false")
         git(repo, "add", "-A")
         git(repo, "commit", "-qm", "base")
+        if "change" not in spec:
+            print(repo)
+            continue
         rel, old, new = spec["change"]
         path = os.path.join(repo, rel)
         with open(path, encoding="utf-8", newline="") as fh:

@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"指出加载中标题读成共0条"},{"index":2,"verdict":0,"why":"未指出失败时标题也是共0条"},{"index":3,"verdict":1,"why":"指出limit=50，满50误当总数"},{"index":4,"verdict":1,"why":"指出100与代码50对不上"},{"index":5,"verdict":1,"why":"指出toast直拼后端原文和HTTP 500"},{"index":6,"verdict":1,"why":"只列问题清单，未整段改写组件"}]}

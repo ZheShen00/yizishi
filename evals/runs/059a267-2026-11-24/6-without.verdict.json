@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"第8条点明加载中标题先报共0条"},{"index":2,"verdict":1,"why":"第4条指出失败落入暂无订单空态"},{"index":3,"verdict":0,"why":"只讲加载态0，未提失败态标题"},{"index":4,"verdict":1,"why":"第1条指出limit=50且被当总数"},{"index":5,"verdict":1,"why":"第2条指出100与50对不上"},{"index":6,"verdict":1,"why":"第5条列HTTP 500及浏览器原文"},{"index":7,"verdict":1,"why":"仅列问题，未整段改写组件"}]}

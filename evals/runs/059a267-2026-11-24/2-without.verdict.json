@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":0,"why":"首句仍含 Errno、路径与异常原文"},{"index":2,"verdict":0,"why":"首句只有问题，没有下一步"},{"index":3,"verdict":1,"why":"无破折号连接、没法、产物"},{"index":4,"verdict":0,"why":"机制句仅移出括号，未删除"},{"index":5,"verdict":0,"why":"只有零散词句箭头，无整句对照"},{"index":6,"verdict":0,"why":"x.docx 仍带服务器路径，未说明"}]}

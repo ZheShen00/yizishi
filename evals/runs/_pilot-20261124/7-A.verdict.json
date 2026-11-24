@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":0,"why":"改写句仍留/srv路径、tmp_83f2、网关"},{"index":2,"verdict":1,"why":"第一句保留了季度复盘.pptx"},{"index":3,"verdict":1,"why":"第二句有50MB上限和压缩后重试"},{"index":4,"verdict":1,"why":"第三句无破折号，说明自动重试无需处理"},{"index":5,"verdict":0,"why":"第一句只有问题，没有下一步"},{"index":6,"verdict":0,"why":"只有改写后与改动说明，无改前对照"}]}

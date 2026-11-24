@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":"NA","why":"需实跑脚本，文本无法验证"},{"index":2,"verdict":1,"why":"BREAK与VACUOUS分类清楚"},{"index":3,"verdict":1,"why":"指出旧词没了会永远通过"},{"index":4,"verdict":0,"why":"只提探针，漏按函数源码门禁"},{"index":5,"verdict":1,"why":"给出toBe空串的精确断言"}]}

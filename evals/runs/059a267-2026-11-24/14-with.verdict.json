@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"问题3明确指出加载中就显示0 messages"},{"index":2,"verdict":1,"why":"问题1指出失败落到Oops空状态当成空邮箱"},{"index":3,"verdict":1,"why":"问题4指出toast直出e.message原文"},{"index":4,"verdict":1,"why":"问题2指出limit=20截断且被当总数"},{"index":5,"verdict":1,"why":"问题5、6指出无下一步及Oops感叹emoji"},{"index":6,"verdict":1,"why":"只说未重写、逐条列问题未整段改代码"}]}

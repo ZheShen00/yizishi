@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"贴出脚本运行命令与BREAK/VACUOUS结果"},{"index":2,"verdict":1,"why":"点名测试toContain与gate grep两处"},{"index":3,"verdict":1,"why":"指出仍在同步断言永远通过"},{"index":4,"verdict":1,"why":"改为toBe空串断精确值"},{"index":5,"verdict":1,"why":"提醒注释含该词会假绿"}]}

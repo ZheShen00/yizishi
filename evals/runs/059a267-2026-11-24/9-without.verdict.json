@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"声称全仓查过，仅三处引用"},{"index":2,"verdict":1,"why":"表格点名两处会断断言"},{"index":3,"verdict":1,"why":"指出该反向断言永远通过"},{"index":4,"verdict":1,"why":"改为 toBe(\"\") 精确断言"},{"index":5,"verdict":1,"why":"警示注释含请勿关闭会假绿"}]}

@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"明确写加载中已显示0 messages"},{"index":2,"verdict":1,"why":"指出失败落空状态误称无邮件"},{"index":3,"verdict":1,"why":"指出toast直接显示e.message原文"},{"index":4,"verdict":1,"why":"指出limit=20被当成总数"},{"index":5,"verdict":1,"why":"指出感叹号emoji且无下一步"},{"index":6,"verdict":1,"why":"仅列问题，未改写组件"}]}

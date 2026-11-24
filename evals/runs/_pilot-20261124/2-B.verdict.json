@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":0,"why":"首句带服务器路径 /srv/files"},{"index":2,"verdict":0,"why":"首句只有问题、缺下一步"},{"index":3,"verdict":1,"why":"破折号连接、没法、产物均无"},{"index":4,"verdict":1,"why":"第三句已无括号机制说明"},{"index":5,"verdict":0,"why":"只有改动点说明，无改前改后对照"},{"index":6,"verdict":0,"why":"首句仍带服务器路径且未说明"}]}

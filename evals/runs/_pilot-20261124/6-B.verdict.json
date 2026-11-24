@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"点出加载中标题已显示共0条"},{"index":2,"verdict":1,"why":"指出失败态暂无订单并混同无订单"},{"index":3,"verdict":1,"why":"提到limit=50且满50条误作总数"},{"index":4,"verdict":1,"why":"指出文案100条与代码50条矛盾"},{"index":5,"verdict":1,"why":"指出HTTP 500等原始报错直拼给用户"},{"index":6,"verdict":1,"why":"只列问题未整段改写组件"}]}

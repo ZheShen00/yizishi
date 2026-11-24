@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"声称全仓grep并逐条复算四处锚点"},{"index":2,"verdict":1,"why":"表格区分会挂锚与恒真断言"},{"index":3,"verdict":1,"why":"指出该断言不修就永远通过"},{"index":4,"verdict":1,"why":"点出门禁grep源码与真浏览器探针"},{"index":5,"verdict":1,"why":"修法给toBe(\"\")断言精确值"}]}

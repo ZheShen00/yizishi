@@ -132,7 +132,7 @@ references/industries/        12 个行业风格 + 模板
 references/locale-zh-hant.md  繁体（台湾 / 香港）用词和标点
 assets/glossary-template.md   项目术语表模板
 scripts/                      提取文案、查测试锚点、自测
-evals/                        评测场景（改技能后复测用）
+evals/                        评测场景、评测协议、公开评测报告
 agents/openai.yaml            Codex 的显示信息
 ```
 

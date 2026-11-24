@@ -1,0 +1,1 @@
+{"verdicts":[{"index":1,"verdict":1,"why":"明说加载中首屏读成共0条"},{"index":2,"verdict":1,"why":"指出失败落空态显示暂无订单"},{"index":3,"verdict":0,"why":"只说加载中，未提失败标题也是0条"},{"index":4,"verdict":1,"why":"指出PAGE_SIZE=50，满50读成总数"},{"index":5,"verdict":1,"why":"指出100与代码50对不上"},{"index":6,"verdict":1,"why":"指出会显示HTTP 500和原始报错"},{"index":7,"verdict":1,"why":"只列问题清单，未整段改写组件"}]}
